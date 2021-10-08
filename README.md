@@ -1,0 +1,1 @@
+# Superciety's Front PWA
