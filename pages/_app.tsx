@@ -19,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="theme-color" content={Config.App.Colors.Teal} />
+        <meta name="description" content={Config.App.Description} />
 
         <link rel="icon" href="/favicon.ico" />
 
