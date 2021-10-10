@@ -51,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply text-gray-900 font-head font-medium antialiased leading-tight;
+  @apply text-gray-900 font-head font-medium antialiased leading-relaxed;
 }
 
 h1 {

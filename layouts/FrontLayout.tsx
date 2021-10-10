@@ -8,7 +8,7 @@ type Props = {
 const FrontLayout = ({ children }: Props) => (
   <div>
     <Navigation />
-    <main className="max-w-6xl mx-auto p-4">{children}</main>
+    <main className="max-w-7xl mx-auto p-4">{children}</main>
     <footer></footer>
   </div>
 )
