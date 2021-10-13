@@ -4,18 +4,33 @@ type Props = {
   title: string
   description: string
   children?: ReactNode
+  className?: string
+  titleGradientClassName?: [string, string]
 }
 
-const FrontSection = ({ title, description, children }: Props) => (
-  <section className="flex">
-    <div className="w-1/2">
-      <h1 className="mb-4">{title}</h1>
-      <p className="text-2xl text-gray-600">{description}</p>
-    </div>
-    {children && (
-      <div className="w-1/2 flex justify-center items-center">{children}</div>
-    )}
-  </section>
-)
+const FrontSection = (props: Props) => {
+  const titleColorClassName =
+    props.titleGradientClassName && props.titleGradientClassName.length > 0
+      ? `text-transparent bg-clip-text bg-gradient-to-br ${props.titleGradientClassName[0]} ${props.titleGradientClassName[1]}`
+      : 'text-gray-800'
+
+  return (
+    <section
+      className={`flex bg-gray-50 p-12 rounded-xl ${props.className || 'mb-8'}`}
+    >
+      <div className="w-2/3">
+        <h1 className={`text-6xl mb-4 ${titleColorClassName}`}>
+          {props.title}
+        </h1>
+        <p className="text-3xl text-gray-600">{props.description}</p>
+      </div>
+      {props.children && (
+        <div className="w-1/3 flex justify-center items-center">
+          {props.children}
+        </div>
+      )}
+    </section>
+  )
+}
 
 export default FrontSection

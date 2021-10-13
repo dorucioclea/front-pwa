@@ -6,4 +6,7 @@ export const Config = {
       Teal: '#38B2AC',
     },
   },
+  Urls: {
+    Developers: 'https://developers.superciety.com',
+  },
 }

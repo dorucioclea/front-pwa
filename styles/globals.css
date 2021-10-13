@@ -52,7 +52,7 @@ h4,
 h5,
 h6 {
   @apply text-gray-900 font-head font-medium antialiased;
-  line-height: 1.25 !important;
+  line-height: 1.2 !important;
 }
 
 h1 {
@@ -103,4 +103,8 @@ p a {
 p a:hover,
 p a:active {
   @apply text-primary-500 font-bold no-underline border-transparent;
+}
+
+.max-w-8xl {
+  max-width: 88rem;
 }
