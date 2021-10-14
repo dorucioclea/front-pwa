@@ -1,16 +1,15 @@
 import Navigation from '../features/Layout/Navigation'
-import { ReactNode } from 'react'
 
 type Props = {
-  children: ReactNode
+  children: any
 }
 
 const FrontLayout = ({ children }: Props) => (
-  <div>
+  <>
     <Navigation />
     <main className="max-w-8xl mx-auto p-4">{children}</main>
     <footer></footer>
-  </div>
+  </>
 )
 
 export default FrontLayout

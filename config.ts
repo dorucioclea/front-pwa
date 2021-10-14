@@ -5,6 +5,11 @@ export const Config = {
     Colors: {
       Teal: '#38B2AC',
     },
+    Pages: {
+      ManageIdentity: '/manage/identity',
+      ManageFellowship: '/manage/fellowship',
+      ManageWebhooks: '/manage/webhooks',
+    },
   },
   Urls: {
     Developers: 'https://developers.superciety.com',
