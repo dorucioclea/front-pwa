@@ -1,6 +1,6 @@
 import Navigation from '../features/Layout/Navigation'
 import SideNavigation, { SideNavigationItem } from '../features/Layout/SideNavigation'
-import { faIdBadge, faProjectDiagram, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
+import { faHandsHelping, faIdBadge, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { Config } from '../config'
 
 type Props = {
@@ -19,7 +19,7 @@ const ManageLayout = (props: Props) => {
     {
       name: 'Fellowships',
       href: Config.App.Pages.ManageFellowship,
-      icon: faProjectDiagram,
+      icon: faHandsHelping,
       colorClassName: 'text-yellow-500',
     },
   ]
