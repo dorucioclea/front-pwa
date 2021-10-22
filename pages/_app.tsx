@@ -1,7 +1,8 @@
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Config } from '../config'
-import type { AppProps } from 'next/app'
 import '../styles/globals.css'
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const title = pageProps.title ? `${pageProps.title} - ${Config.App.Name}` : Config.App.Name
