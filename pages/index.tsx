@@ -13,11 +13,11 @@ const Home: NextPage = () => (
       ctaText="Contribute"
       ctaLink={Config.Urls.Developers}
       footerContent={
-        <p className="text-2xl md:text-3xl text-gray-600">
+        <p className="text-xl md:text-2xl lg:text-3xl text-gray-600">
           Built on Elrond
-          <img src="/images/elrond-logo.svg" alt="" className="inline-block mx-2 w-8 h-8 opacity-75" />
+          <img src="/images/elrond-logo.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8 opacity-75" />
           using $SUPER
-          <img src="/images/super-token-icon.svg" alt="" className="inline-block mx-2 w-8 h-8" />
+          <img src="/images/super-token-icon.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8" />
         </p>
       }
       className="mb-32"
