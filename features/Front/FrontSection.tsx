@@ -15,20 +15,12 @@ const FrontSection = (props: Props) => {
       : 'text-gray-800'
 
   return (
-    <section
-      className={`flex bg-gray-50 p-12 rounded-xl ${props.className || 'mb-8'}`}
-    >
-      <div className="w-2/3">
-        <h1 className={`text-6xl mb-4 ${titleColorClassName}`}>
-          {props.title}
-        </h1>
-        <p className="text-3xl text-gray-600">{props.description}</p>
+    <section className={`flex flex-wrap bg-gray-50 p-12 rounded-xl ${props.className || 'mb-8'}`}>
+      <div className="w-full md:w-2/3">
+        <h1 className={`text-5xl md:text-6xl mb-4 ${titleColorClassName}`}>{props.title}</h1>
+        <p className="text-2xl md:text-3xl text-gray-600">{props.description}</p>
       </div>
-      {props.children && (
-        <div className="w-1/3 flex justify-center items-center">
-          {props.children}
-        </div>
-      )}
+      {props.children && <div className="w-full md:w-1/3 flex justify-center items-center">{props.children}</div>}
     </section>
   )
 }

@@ -1,7 +1,7 @@
+import type { NextPage } from 'next'
 import FrontLayout from '../layouts/FrontLayout'
 import FrontHero from '../features/Front/FrontHero'
 import FrontSection from '../features/Front/FrontSection'
-import { NextPage } from 'next'
 import { Config } from '../config'
 
 const Home: NextPage = () => (
@@ -9,15 +9,19 @@ const Home: NextPage = () => (
     <FrontHero
       title="Building Utopia on Earth"
       description="using technology to push humans forward."
+      image="/images/logo.png"
       ctaText="Contribute"
       ctaLink={Config.Urls.Developers}
+      footerContent={
+        <p className="text-2xl md:text-3xl text-gray-600">
+          Built on Elrond
+          <img src="/images/elrond-logo.svg" alt="" className="inline-block mx-2 w-8 h-8 opacity-75" />
+          using $SUPER
+          <img src="/images/super-token-icon.svg" alt="" className="inline-block mx-2 w-8 h-8" />
+        </p>
+      }
       className="mb-32"
-    >
-      <img
-        src="/images/logo.png"
-        className="absolute right-0 top-4 -z-10 -mr-32 transform rotate-6 opacity-10 sm:opacity-50 md:opacity-75 lg:opacity-100"
-      />
-    </FrontHero>
+    />
     <FrontSection
       title="Identity"
       titleGradientClassName={['from-indigo-500', 'to-purple-200']}
@@ -42,10 +46,7 @@ const Home: NextPage = () => (
       description="are the foundation of Superciety"
       className="mb-64"
     >
-      <img
-        src="/images/freeiam-logo.png"
-        className="block h-32 transform rotate-6 animate-pulse"
-      />
+      <img src="/images/freeiam-logo.png" className="block h-32 transform rotate-6 animate-pulse" />
     </FrontSection>
   </FrontLayout>
 )
