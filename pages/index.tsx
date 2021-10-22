@@ -17,7 +17,7 @@ const Home: NextPage = () => (
           Built on Elrond
           <img src="/images/elrond-logo.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8 opacity-75" />
           using $SUPER
-          <img src="/images/super-token-icon.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8" />
+          <img src="/images/super-token-icon.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8 -mt-1" />
         </p>
       }
       className="mb-32"
