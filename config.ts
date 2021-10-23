@@ -1,3 +1,6 @@
+import { faHome, faInfo, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { NavigationItem } from '@superciety/pwa-core-library'
+
 export const Config = {
   App: {
     Name: 'Superciety',
@@ -11,7 +14,19 @@ export const Config = {
       ManageWebhooks: '/manage/webhooks',
     },
   },
+
   Urls: {
+    ApiBase: process.env.NEXT_PUBLIC_API_BASEURL || 'https://api.superciety.com',
     Developers: 'https://developers.superciety.com',
+  },
+
+  Navigation: {
+    Guest: [
+      { text: 'home', href: '/', icon: faHome },
+      { text: 'explore', href: '/explore', icon: faSearch },
+      { text: 'explore', href: '/explore', icon: faSearch },
+      { text: 'about', href: '/about', icon: faInfo },
+    ] as NavigationItem[],
+    Authenticated: [{ text: 'me', href: '/i/me', icon: faUser }] as NavigationItem[],
   },
 }
