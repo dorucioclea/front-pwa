@@ -14,13 +14,16 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
+    "@reduxjs/toolkit": "^1.6.2",
     "@superciety/pwa-core-library": "file:../superciety--pwa-core-library",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.5"
   },
   "devDependencies": {
     "@types/react": "17.0.27",
+    "@types/react-redux": "^7.1.20",
     "autoprefixer": "^10.3.7",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",

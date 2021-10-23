@@ -1,8 +1,10 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import store from '../features/store'
 import { Config } from '../config'
-import '../styles/globals.css'
+import { Provider } from 'react-redux'
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const title = pageProps.title ? `${pageProps.title} - ${Config.App.Name}` : Config.App.Name
@@ -22,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <title>{title}</title>
       </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </>
   )
 }
