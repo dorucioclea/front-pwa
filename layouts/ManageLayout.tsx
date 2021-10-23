@@ -1,4 +1,4 @@
-import Navigation from '../features/Layout/Navigation'
+import Header from '../features/Layout/Header'
 import SideNavigation, { SideNavigationItem } from '../features/Layout/SideNavigation'
 import { faHandsHelping, faIdBadge, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { Config } from '../config'
@@ -35,7 +35,7 @@ const ManageLayout = (props: Props) => {
 
   return (
     <>
-      <Navigation />
+      <Header />
       <div className="flex max-w-8xl mx-auto pt-12">
         <div className="w-full md:w-1/3 lg:w-1/4 p-4">
           <SideNavigation items={sideNavigation} className="mb-4" />

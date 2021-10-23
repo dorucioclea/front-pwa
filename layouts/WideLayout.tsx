@@ -1,4 +1,4 @@
-import Navigation from '../features/Layout/Navigation'
+import Header from '../features/Layout/Header'
 
 type Props = {
   children: any
@@ -7,7 +7,7 @@ type Props = {
 const WideLayout = (props: Props) => {
   return (
     <>
-      <Navigation />
+      <Header />
       <main className="max-w-6xl mx-auto p-12">{props.children}</main>
       <footer></footer>
     </>
