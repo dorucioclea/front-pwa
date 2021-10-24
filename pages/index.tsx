@@ -10,7 +10,7 @@ const Home: NextPage = () => (
       title="Building Utopia on Earth"
       description="using technology to push humans forward."
       image="/images/logo.png"
-      ctaText="Contribute"
+      ctaText="Explore"
       ctaLink={Config.Urls.Developers}
       footerContent={
         <p className="text-xl md:text-2xl lg:text-3xl text-gray-600">
@@ -21,6 +21,8 @@ const Home: NextPage = () => (
         </p>
       }
       className="mb-32"
+      imageClassName="transform rotate-6 animated fadeInLeft fast"
+      imageContainerClassName="animated float"
     />
     <FrontSection
       title="Identity"

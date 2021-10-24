@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'neue_einstellungbold';
+  src: url('/fonts/neueeinstellung-bold-webfont.woff2') format('woff2'),
+    url('/fonts/neueeinstellung-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'neue_einstellungregular';
+  src: url('/fonts/neueeinstellung-regular-webfont.woff2') format('woff2'),
+    url('/fonts/neueeinstellung-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'cerebri_sans_probold';
+  src: url('/fonts/cerebrisanspro-bold-webfont.woff2') format('woff2'),
+    url('/fonts/cerebrisanspro-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'cerebri_sans_proregular';
+  src: url('/fonts/cerebrisanspro-regular-webfont.woff2') format('woff2'),
+    url('/fonts/cerebrisanspro-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-gray-900 font-head font-medium antialiased;
+  line-height: 1.2 !important;
+}
+
+h1 {
+  @apply text-4xl;
+}
+@screen lg {
+  h1 {
+    @apply text-5xl;
+  }
+}
+
+h2 {
+  @apply text-3xl;
+}
+@screen lg {
+  h2 {
+    @apply text-4xl;
+  }
+}
+
+h3 {
+  @apply text-xl;
+}
+@screen lg {
+  h3 {
+    @apply text-2xl;
+  }
+}
+
+h4 {
+  @apply text-lg;
+}
+@screen lg {
+  h4 {
+    @apply text-xl;
+  }
+}
+
+p {
+  @apply antialiased font-text text-gray-600 leading-relaxed whitespace-pre-line break-words;
+}
+
+p a {
+  @apply inline-block text-primary-500 border-b-4 border-primary-200;
+  line-height: 0.8;
+}
+
+p a:hover,
+p a:active {
+  @apply text-primary-500 font-bold no-underline border-transparent;
+}
