@@ -1,17 +1,16 @@
 import Header from '../features/Layout/Header'
+import Footer from '../features/Layout/Footer'
 
 type Props = {
   children: any
 }
 
-const WideLayout = (props: Props) => {
-  return (
-    <>
-      <Header />
-      <main className="max-w-6xl mx-auto p-12">{props.children}</main>
-      <footer></footer>
-    </>
-  )
-}
+const WideLayout = (props: Props) => (
+  <div className="overflow-hidden pb-24 mb:pb-0">
+    <Header />
+    <main className="max-w-6xl mx-auto p-12">{props.children}</main>
+    <Footer />
+  </div>
+)
 
 export default WideLayout

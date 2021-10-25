@@ -1,4 +1,5 @@
 import Header from '../features/Layout/Header'
+import Footer from '../features/Layout/Footer'
 import SideNavigation, { SideNavigationItem } from '../features/Layout/SideNavigation'
 import { faHandsHelping, faIdBadge, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { Config } from '../config'
@@ -34,7 +35,7 @@ const ManageLayout = (props: Props) => {
   ]
 
   return (
-    <>
+    <div className="overflow-hidden pb-24 mb:pb-0">
       <Header />
       <div className="flex max-w-8xl mx-auto pt-12">
         <div className="w-full md:w-1/3 lg:w-1/4 p-4">
@@ -46,8 +47,8 @@ const ManageLayout = (props: Props) => {
           {props.children}
         </main>
       </div>
-      <footer></footer>
-    </>
+      <Footer />
+    </div>
   )
 }
 
