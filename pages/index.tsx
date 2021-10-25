@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import FrontLayout from '../layouts/FrontLayout'
 import FrontHero from '../features/Front/FrontHero'
 import FrontSection from '../features/Front/FrontSection'
+import FrontQuote from '../features/Front/FrontQuote'
 import { Config } from '../config'
 
 const Home: NextPage = () => (
@@ -13,17 +14,18 @@ const Home: NextPage = () => (
       ctaText="Explore"
       ctaLink={Config.Urls.Developers}
       footerContent={
-        <p className="text-xl md:text-2xl lg:text-3xl text-gray-600">
-          Built on Elrond
+        <p className="text-2xl lg:text-3xl text-gray-600">
+          Built on Elrond Blockchain
           <img src="/images/elrond-logo.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8 opacity-75" />
-          using $SUPER
-          <img src="/images/super-token-icon.svg" alt="" className="inline-block mx-2 w-6 h-6 md:w-8 md:h-8 -mt-1" />
         </p>
       }
       className="mb-32"
       imageClassName="transform rotate-6 animated fadeInLeft fast"
       imageContainerClassName="animated float"
     />
+    <FrontQuote title=" We are building the society we want to live in.">
+      One where humans dedicate their time to what’s important to them and modern technology does the rest.
+    </FrontQuote>
     <FrontSection
       title="Identity"
       titleGradientClassName={['from-indigo-500', 'to-purple-200']}
