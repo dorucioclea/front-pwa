@@ -18,6 +18,7 @@ export const Config = {
   Urls: {
     ApiBase: process.env.NEXT_PUBLIC_API_BASEURL || 'https://api.superciety.com',
     Developers: 'https://developers.superciety.com',
+    Attributions: 'https://law.superciety.com/general/attributions.html',
     Freeiam: 'https://freeiam.com',
     Elrond: 'https://elrond.com',
   },
