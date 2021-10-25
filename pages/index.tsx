@@ -28,7 +28,7 @@ const Home: NextPage = () => (
     )}>
       One where humans dedicate their time to what’s important to them and modern technology does the rest.
     </FrontQuote>
-    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One that puts its people over everything else:</p>
+    <p className="text-2xl md:text-3xl text-gray-400 mb-8">One that puts its people over everything else:</p>
     <FrontSection
       title="Identity"
       titleGradientClassName={['from-indigo-500', 'to-purple-200']}
@@ -37,7 +37,7 @@ const Home: NextPage = () => (
     >
       <span className="font-bold text-4xl text-gray-400">🔜 Coming this year</span>
     </FrontSection>
-    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One that incentivizes collaboration instead of competition:</p>
+    <p className="text-2xl md:text-3xl text-gray-400 mb-8">One that incentivizes collaboration instead of competition:</p>
     <FrontSection
       title="Fellowships"
       titleGradientClassName={['from-red-500', 'to-yellow-200']}
@@ -46,7 +46,7 @@ const Home: NextPage = () => (
     >
       <span className="font-bold text-4xl text-gray-400">🔜 Coming in 2022</span>
     </FrontSection>
-    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One that builds tools that are owned by everyone:</p>
+    <p className="text-2xl md:text-3xl text-gray-400 mb-8">One that builds tools that are owned by everyone:</p>
     <FrontSection
       title="Public Services"
       titleGradientClassName={['from-pink-600', 'to-purple-300']}
@@ -55,7 +55,7 @@ const Home: NextPage = () => (
     >
     <span className="font-bold text-4xl text-gray-400">🔜 Coming this year</span>
     </FrontSection>
-    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One with people full of meaning and strength:</p>
+    <p className="text-2xl md:text-3xl text-gray-400 mb-8">One with people full of meaning and strength:</p>
     <FrontSection
       title="Superhuman"
       titleGradientClassName={['from-freeiam', 'to-red-400']}
