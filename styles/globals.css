@@ -16,3 +16,11 @@ body {
 .max-w-8xl {
   max-width: 88rem;
 }
+
+@variants hover, focus {
+  .highlight {
+    background-image: linear-gradient(180deg, transparent 70%, rgba(79, 209, 197, 0.4) 0);
+    display: inline-block;
+    text-decoration: none;
+  }
+}

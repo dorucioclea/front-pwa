@@ -25,7 +25,7 @@ export const Config = {
 
   Navigation: {
     Guest: [
-      { text: 'home', href: '/', icon: faHome },
+      { text: 'start', href: '/', icon: faHome },
       { text: 'explore', href: '/explore', icon: faSearch },
       { text: 'explore', href: '/explore', icon: faSearch },
       { text: 'about', href: '/about', icon: faInfo },

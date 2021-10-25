@@ -9,7 +9,7 @@ const Home: NextPage = () => (
   <FrontLayout>
     <FrontHero
       title="Building Utopia on Earth"
-      description="using technology to push humans forward."
+      description="It's 2021, but we still live in a society full of obligations and exploitations. Turns out there is a better way."
       image="/images/logo.png"
       ctaText="Explore"
       ctaLink={Config.Urls.Developers}
@@ -20,37 +20,51 @@ const Home: NextPage = () => (
         </p>
       }
       className="mb-32"
-      imageClassName="transform rotate-6 animated fadeInLeft fast"
+      imageClassName="animated fadeInLeft fast"
       imageContainerClassName="animated float"
     />
-    <FrontQuote title=" We are building the society we want to live in.">
+    <FrontQuote title={(
+        <>We are building the society <span className="highlight"> we want to live in</span>.</>
+    )}>
       One where humans dedicate their time to what’s important to them and modern technology does the rest.
     </FrontQuote>
+    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One that puts its people over everything else:</p>
     <FrontSection
       title="Identity"
       titleGradientClassName={['from-indigo-500', 'to-purple-200']}
       description="is how people know you in Superciety"
       className="mb-64"
-    />
+    >
+      <span className="font-bold text-4xl text-gray-400">🔜 Coming this year</span>
+    </FrontSection>
+    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One that incentivizes collaboration instead of competition:</p>
     <FrontSection
       title="Fellowships"
       titleGradientClassName={['from-red-500', 'to-yellow-200']}
       description="are communities working towards a common goal"
       className="mb-64"
-    />
+    >
+      <span className="font-bold text-4xl text-gray-400">🔜 Coming in 2022</span>
+    </FrontSection>
+    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One that builds tools that are owned by everyone:</p>
     <FrontSection
-      title="Developer Tools"
-      titleGradientClassName={['from-blue-500', 'to-indigo-200']}
-      description="speed up the creation of your best ideas"
-      className="mb-64"
-    />
-    <FrontSection
-      title="Superhuman"
-      titleGradientClassName={['from-red-500', 'to-gray-900']}
-      description="are the foundation of Superciety"
+      title="Public Services"
+      titleGradientClassName={['from-pink-600', 'to-purple-300']}
+      description="help us free our time and make lives easier"
       className="mb-64"
     >
-      <img src="/images/freeiam-logo.png" className="block h-32 transform rotate-6 animate-pulse" />
+    <span className="font-bold text-4xl text-gray-400">🔜 Coming this year</span>
+    </FrontSection>
+    <p className="text-2xl md:text-3xl text-gray-400 -mb-1">One with people full of meaning and strength:</p>
+    <FrontSection
+      title="Superhuman"
+      titleGradientClassName={['from-freeiam', 'to-red-400']}
+      description="is someone who strives to live a self-determined life"
+      className="mb-64"
+    >
+      <div className="absolute" style={{ right: '-8vw', bottom: '-8vw' }}>
+        <img src="/images/freeiam-rush-out.svg" className="block" style={{ width: '42vw' }} />
+      </div>
     </FrontSection>
   </FrontLayout>
 )
