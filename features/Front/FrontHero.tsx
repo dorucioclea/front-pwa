@@ -18,7 +18,9 @@ type Props = {
 
 const FrontHero = (props: Props) => (
   <section
-    className={`relative flex flex-col ${!!props.children ? 'justify-around' : 'pt-32'} ${props.className || ''}`}
+    className={`relative flex flex-col ${
+      !!props.children ? 'justify-around' : 'pt-8 md:pt-20 lg:pt-32'
+    } ${props.className || ''}`}
     style={{ height: 'calc(100vh - 100px)' }}
   >
     <div className="max-w-3xl">
@@ -34,7 +36,7 @@ const FrontHero = (props: Props) => (
       )}
     </div>
     <div
-      className={`absolute right-0 top-4 -z-10 -mr-32 opacity-10 sm:opacity-50 md:opacity-75 lg:opacity-100 ${props.imageContainerClassName}`}
+      className={`absolute right-0 top-4 -z-10 -mr-32 opacity-10 sm:opacity-50 lg:opacity-75 xl:opacity-100 ${props.imageContainerClassName}`}
     >
       <img src={props.image} className={props.imageClassName} />
     </div>
