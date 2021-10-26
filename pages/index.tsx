@@ -66,6 +66,13 @@ const Home: NextPage = () => (
         <img src="/images/freeiam-rush-out.svg" className="block" style={{ width: '42vw' }} />
       </div>
     </FrontSection>
+    <FrontQuote title={(
+      <>
+        We have all the technology & resources available <span className="highlight">to build utopia</span>.
+      </>
+    )}>
+      Now, we need courageous people who don't shy away from tearing down conventional approaches by building systems that make the old ones obsolete.
+    </FrontQuote>
   </FrontLayout>
 )
 
