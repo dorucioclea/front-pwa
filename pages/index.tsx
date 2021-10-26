@@ -9,7 +9,7 @@ const Home: NextPage = () => (
   <FrontLayout>
     <FrontHero
       title="Building Utopia on Earth"
-      description="It's 2021, but we still live in a society full of obligations and exploitations. Turns out there is a better way."
+      description="It's 2021, and we still live in a society full of obligations & exploitations."
       image="/images/logo.png"
       ctaText="Explore"
       ctaLink={Config.Urls.Developers}
