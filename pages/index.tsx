@@ -3,6 +3,7 @@ import FrontLayout from '../layouts/FrontLayout'
 import FrontHero from '../features/Front/FrontHero'
 import FrontSection from '../features/Front/FrontSection'
 import FrontQuote from '../features/Front/FrontQuote'
+import FreeiamFrontSection from '../features/Front/FreeiamFrontSection'
 import { Config } from '../config'
 
 const Home: NextPage = () => (
@@ -56,16 +57,7 @@ const Home: NextPage = () => (
     <span className="font-bold text-4xl text-gray-400">🔜 Coming this year</span>
     </FrontSection>
     <p className="text-2xl md:text-3xl text-gray-400 mb-8">One with people full of meaning and strength:</p>
-    <FrontSection
-      title="Superhuman"
-      titleGradientClassName={['from-freeiam', 'to-red-400']}
-      description="is someone who strives to live a self-determined life"
-      className="mb-64"
-    >
-      <div className="absolute" style={{ right: '-8vw', bottom: '-8vw' }}>
-        <img src="/images/freeiam-rush-out.svg" className="block" style={{ width: '42vw' }} />
-      </div>
-    </FrontSection>
+    <FreeiamFrontSection />
     <FrontQuote title={(
       <>
         We have all the technology & resources available <span className="highlight">to build utopia</span>.
