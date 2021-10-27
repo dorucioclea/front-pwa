@@ -8,7 +8,7 @@ export const Config = {
     Name: 'Superciety',
     Description: 'Buildinig the society of tomorrow on the Elrond blockchain.',
     Colors: {
-      Teal: '#38B2AC',
+      Teal: '#4FD1C5',
     },
     Pages: {
       ManageIdentity: '/manage/identity',
