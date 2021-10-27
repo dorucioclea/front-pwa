@@ -11,13 +11,14 @@ const FreeiamFrontSection = () => (
     description="are the foundation of Superciety"
     className="mb-64"
   >
-    <div className="absolute" style={{ right: '-8vw', bottom: '-8vw' }}>
-      <img src="/images/freeiam-rush-out.svg" className="block" style={{ width: '42vw', minWidth: '20rem' }} />
+    <div className="absolute hidden md:block" style={{ right: '-8vw', bottom: '-8vw' }}>
+      <img src="/images/freeiam-rush-out.svg" className="block float-2" style={{ width: '42vw', minWidth: '20rem' }} />
     </div>
     <p className="max-w-3xl text-2xl text-gray-500 mb-8">
       They are a source of knowledge & wisdom, are emotionally strong, and live a life of{' '}
       <strong>meaning, creativity, and free play</strong>.
     </p>
+    <img src="/images/freeiam-rush-out.svg" className="block md:hidden -ml-20 h-64 float-2" />
     <p className="max-w-3xl text-2xl text-gray-500 mb-4">
       <a href={Config.Urls.Freeiam} target="_blank" className="font-bold text-gray-600 border-none">
         Freeiam
