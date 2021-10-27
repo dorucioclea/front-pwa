@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Config } from '../../config'
 import { getHttpService } from '../http'
 import { getAuthProofableToken, storeAuthVerifyRequest } from '../User/api'
@@ -28,10 +29,12 @@ const Header = () => {
 
   return (
     <header className="bg-black py-3 px-2 md:px-8 w-full flex justify-between items-center">
-      <a href="/" className="flex items-center">
-        <img src="/images/logo-white.png" className="block mr-1 md:mr-2 w-12 h-12" />
-        <span className="font-head text-white text-2xl uppercase tracking-widest">{Config.App.Name}</span>
-      </a>
+      <Link href="/">
+        <a className="flex items-center">
+          <img src="/images/logo-white.png" className="block mr-1 md:mr-2 w-12 h-12" />
+          <span className="font-head text-white text-2xl uppercase tracking-widest">{Config.App.Name}</span>
+        </a>
+      </Link>
       <Navigation items={navItems} className="hidden md:block" />
       <div>
         {isLoggedIn ? (
