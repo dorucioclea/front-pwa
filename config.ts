@@ -1,5 +1,7 @@
 import { faHome, faInfo, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { NavigationItem } from '@superciety/pwa-core-library'
+import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
 
 export const Config = {
   App: {
@@ -31,5 +33,12 @@ export const Config = {
       { text: 'about', href: '/about', icon: faInfo },
     ] as NavigationItem[],
     Authenticated: [{ text: 'me', href: '/i/me', icon: faUser }] as NavigationItem[],
+  },
+
+  Footer: {
+    Socials: [
+      { label: 'Discord', icon: faDiscord, colorHex: '#7289da', href: 'http://freeiam.chat' },
+      { label: 'Twitter', icon: faTwitter, colorHex: '#00acee', href: 'https://twitter.com/SupercietyHQ' },
+    ] as SocialPlatformBarItem[],
   },
 }
