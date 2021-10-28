@@ -1,5 +1,5 @@
 import FrontSection from './FrontSection'
-import { faFistRaised } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { LinkButton } from '@superciety/pwa-core-library'
 import { Config } from '../../config'
@@ -28,7 +28,7 @@ const FreeiamFrontSection = () => (
     </p>
     <LinkButton href={Config.Urls.Freeiam} color="blue">
       become Superhuman
-      <FontAwesomeIcon icon={faFistRaised} className="inline-block ml-2 text-white opacity-75" />
+      <FontAwesomeIcon icon={faAngleRight} className="inline-block ml-2 text-white opacity-75" />
     </LinkButton>
   </FrontSection>
 )
