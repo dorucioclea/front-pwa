@@ -1,10 +1,14 @@
-import { IHttpService } from '@superciety/pwa-core-library'
-import { ProofableLogin } from '@superciety/pwa-core-library/lib/services/auth'
+import { IHttpService, ProofableLogin } from '@superciety/pwa-core-library'
 import { User, UserPrivate } from './types'
 
-export const getAuthProofableToken = async (http: IHttpService) => await http.get<{ token: string }>('auth/proofable')
+export const getAuthProofableTokenRequest = async (http: IHttpService) => await http.get<{ token: string }>('auth/proofable')
 
 export const storeAuthVerifyRequest = async (http: IHttpService, proofableLogin: ProofableLogin) =>
   await http.post<UserPrivate>('auth/verify', { signature: proofableLogin.signature, address: proofableLogin.address })
 
-export const getUserRequest = async (http: IHttpService) => await http.get<User>(`user`)
+export const getUserRequest = async (http: IHttpService) => await http.get<User>(`me`)
+
+export const getFreeiamConnectUriRequest = async (http: IHttpService) =>
+  await http.get<{ uri: string }>(`freeiam/connect-uri`)
+
+export const storeFreeiamDisconnectRequest = async (http: IHttpService) => await http.post(`freeiam/disconnect`)

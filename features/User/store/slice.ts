@@ -24,9 +24,12 @@ export const slice = createSlice({
       state.loggedIn = false
       state.data = null
     },
+    setAuthenticatedUser: (state, action: PayloadAction<UserPrivate>) => {
+      state.data = action.payload
+    },
   },
 })
 
-export const { login, logout } = slice.actions
+export const { login, logout, setAuthenticatedUser } = slice.actions
 
 export const userReducer = slice.reducer

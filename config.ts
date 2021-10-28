@@ -1,16 +1,20 @@
 import { faHome, faInfo, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
-import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { NavigationItem } from '@superciety/pwa-core-library'
 import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
+import { UserConnectionProvider } from './features/User/types'
 
 export const Config = {
   App: {
     Name: 'Superciety',
     Description: 'Buildinig the society of tomorrow on the Elrond blockchain.',
     Colors: {
-      Teal: '#4FD1C5',
+      Teal: '#4fd1c5',
+      FreeiamPrimary: '#ed3258',
     },
     Pages: {
+      Auth: '/',
+      Manage: '/manage',
       ManageIdentity: '/manage/identity',
       ManageFellowship: '/manage/fellowship',
       ManageWebhooks: '/manage/webhooks',
@@ -32,7 +36,7 @@ export const Config = {
       { text: 'explore', href: '/explore', icon: faSearch },
       { text: 'about', href: '/about', icon: faInfo },
     ] as NavigationItem[],
-    Authenticated: [{ text: 'me', href: '/i/me', icon: faUser }] as NavigationItem[],
+    Authenticated: [{ text: 'manage', href: '/manage', icon: faUser }] as NavigationItem[],
   },
 
   Footer: {
@@ -41,4 +45,9 @@ export const Config = {
       { label: 'Twitter', icon: faTwitter, colorHex: '#00acee', href: 'https://twitter.com/SupercietyHQ' },
     ] as SocialPlatformBarItem[],
   },
+
+  ConnectionProviders: [
+    { id: 'twitter', label: 'Twitter', icon: faTwitter, colorCode: '#00acee', href: '#' },
+    { id: 'github', label: 'Github', icon: faGithub, colorCode: '#000', href: '#' },
+  ] as UserConnectionProvider[],
 }

@@ -1,3 +1,5 @@
+import { IconDefinition } from '@fortawesome/fontawesome-common-types'
+
 export type UserPrivate = {
   address: string
   username: string | null
@@ -17,4 +19,12 @@ export type UserConnection = {
   platform: string
   username: string
   link: string
+}
+
+export type UserConnectionProvider = {
+  id: string
+  label: string
+  icon: IconDefinition
+  colorCode: string
+  href: string
 }

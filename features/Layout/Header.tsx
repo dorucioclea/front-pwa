@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Config } from '../../config'
 import { getHttpService } from '../http'
-import { getAuthProofableToken, storeAuthVerifyRequest } from '../User/api'
+import { getAuthProofableTokenRequest, storeAuthVerifyRequest } from '../User/api'
 import { useAppDispatch, useAppSelector } from '../store'
 import { login, logout } from '../User/store/slice'
 import { selectUserLoggedIn } from '../User/store/selectors'
@@ -20,7 +20,7 @@ const Header = () => {
   const isLoggedIn = useAppSelector(selectUserLoggedIn)
   const navItems = isLoggedIn ? Config.Navigation.Authenticated : Config.Navigation.Guest
 
-  const handleProofableTokenRequest = async () => (await getAuthProofableToken(httpService)).data.token
+  const handleProofableTokenRequest = async () => (await getAuthProofableTokenRequest(httpService)).data.token
 
   const handleProofableLogin = (proofableLogin: ProofableLogin) =>
     handleAppResponse(storeAuthVerifyRequest(httpService, proofableLogin), user => dispatch(login(user)))
