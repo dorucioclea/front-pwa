@@ -1,6 +1,6 @@
 import Header from '../features/Layout/Header'
 import Footer from '../features/Layout/Footer'
-import SideNavigation, { SideNavigationItem } from '../features/Layout/SideNavigation'
+import { SideNavigation, SideNavigationItem } from '@superciety/pwa-core-library'
 import { faHandsHelping, faHome, faIdBadge, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { Config } from '../config'
 
@@ -12,19 +12,19 @@ type Props = {
 const ManageLayout = (props: Props) => {
   const sideNavigation: SideNavigationItem[] = [
     {
-      name: 'General',
+      text: 'General',
       href: Config.App.Pages.Manage,
       icon: faHome,
       colorClassName: 'text-blue-500',
     },
     {
-      name: 'Identity',
+      text: 'Identity',
       href: Config.App.Pages.ManageIdentity,
       icon: faIdBadge,
       colorClassName: 'text-indigo-500',
     },
     {
-      name: 'Fellowships',
+      text: 'Fellowships',
       href: Config.App.Pages.ManageFellowship,
       icon: faHandsHelping,
       colorClassName: 'text-yellow-500',
@@ -33,7 +33,7 @@ const ManageLayout = (props: Props) => {
 
   const sideNavigationDevelopers: SideNavigationItem[] = [
     {
-      name: 'Webhooks',
+      text: 'Webhooks',
       href: Config.App.Pages.ManageWebhooks,
       icon: faWaveSquare,
       colorClassName: 'text-gray-900',

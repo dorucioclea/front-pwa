@@ -1,7 +1,6 @@
-import FrontSection from './FrontSection'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { LinkButton } from '@superciety/pwa-core-library'
+import { FrontSection, LinkButton } from '@superciety/pwa-core-library'
 import { Config } from '../../config'
 
 const FreeiamFrontSection = () => (

@@ -1,9 +1,7 @@
 import type { NextPage } from 'next'
 import FrontLayout from '../layouts/FrontLayout'
-import FrontHero from '../features/Front/FrontHero'
-import FrontSection from '../features/Front/FrontSection'
-import FrontQuote from '../features/Front/FrontQuote'
 import FreeiamFrontSection from '../features/Front/FreeiamFrontSection'
+import { FrontHero, FrontQuote, FrontSection } from '@superciety/pwa-core-library'
 import { Config } from '../config'
 
 const Home: NextPage = () => (
