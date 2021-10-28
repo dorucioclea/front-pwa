@@ -20,6 +20,7 @@ const IdentityManageConnections = ({ httpService }: Props) => {
         <IdentityManageFreeiamConnect httpService={httpService} />
         {Config.ConnectionProviders.map(provider => (
           <_IdentityManageConnectButton
+            key={provider.id}
             href={provider.href}
             icon={provider.icon}
             colorCode={provider.colorCode}
