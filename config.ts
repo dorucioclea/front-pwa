@@ -47,7 +47,19 @@ export const Config = {
   },
 
   ConnectionProviders: [
-    { id: 'twitter', label: 'Twitter', icon: faTwitter, colorCode: '#00acee', href: '#' },
-    { id: 'github', label: 'Github', icon: faGithub, colorCode: '#000', href: '#' },
+    {
+      id: 'github',
+      label: 'Github',
+      icon: faGithub,
+      colorCode: '#000',
+      connectUrl: process.env.NEXT_PUBLIC_API_BASEURL + '/connect/github',
+    },
+    {
+      id: 'twitter',
+      label: 'Twitter',
+      icon: faTwitter,
+      colorCode: '#00acee',
+      connectUrl: process.env.NEXT_PUBLIC_API_BASEURL + '/connect/twitter',
+    },
   ] as UserConnectionProvider[],
 }

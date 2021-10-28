@@ -12,8 +12,9 @@ type Props = {
 }
 
 const _IdentityManageConnectButton = (props: Props) => {
-  const btnClassNames =
-    'relative inline-block px-6 py-4 text-gray-700 text-xl bg-gray-50 rounded-xl active:shadow border-l-4 border-solid group'
+  const btnClassNames = `relative flex justify-between w-full max-w-lg mb-4 px-8 py-4 bg-gray-50 text-gray-700 text-xl rounded-xl active:shadow border-l-4 border-solid group ${
+    props.connected ? 'opacity-50' : ''
+  }`
 
   const overlayClassNames =
     'opacity-0 group-hover:opacity-100 absolute inset-0 flex justify-center items-center bg-gray-100 rounded-xl transition duration-300'
@@ -21,24 +22,26 @@ const _IdentityManageConnectButton = (props: Props) => {
   const Overlay = () => <span className={overlayClassNames}>{props.connected ? 'Disconnect' : 'Connect'}</span>
 
   const Icon = ({ icon }: { icon: IconDefinition }) => (
-    <FontAwesomeIcon icon={icon} color={props.colorCode} size="lg" className="opacity-75 inline-block ml-3" />
+    <FontAwesomeIcon icon={icon} color={props.colorCode} size="lg" className="opacity-75 inline-block mr-3" />
   )
 
-  const ConnectedIcon = () => (
-    <FontAwesomeIcon icon={faCheck} size="2x" className="text-green-500 absolute bottom-0 left-2/3 -mb-3 opacity-75" />
-  )
+  const ConnectedIcon = () => <FontAwesomeIcon icon={faCheck} size="lg" className="text-green-500" />
 
   return props.href ? (
     <a href={props.href} className={btnClassNames} style={{ borderColor: props.colorCode }}>
-      {props.children}
-      {props.icon && <Icon icon={props.icon} />}
-      <Overlay />
+      <span>
+        {props.icon && !props.connected && <Icon icon={props.icon} />}
+        {props.children}
+      </span>
       {props.connected && <ConnectedIcon />}
+      <Overlay />
     </a>
   ) : (
     <button onClick={props.onClick} className={btnClassNames} style={{ borderColor: props.colorCode }}>
-      {props.children}
-      {props.icon && <Icon icon={props.icon} />}
+      <span>
+        {props.icon && !props.connected && <Icon icon={props.icon} />}
+        {props.children}
+      </span>
       <Overlay />
       {props.connected && <ConnectedIcon />}
     </button>

@@ -26,5 +26,5 @@ export type UserConnectionProvider = {
   label: string
   icon: IconDefinition
   colorCode: string
-  href: string
+  connectUrl: string
 }

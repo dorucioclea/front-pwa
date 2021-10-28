@@ -16,12 +16,12 @@ const IdentityManageConnections = ({ httpService }: Props) => {
   return user ? (
     <section>
       <h2 className="text-gray-600 text-2xl mb-4">Connections</h2>
-      <div className="space-x-8">
+      <div>
         <IdentityManageFreeiamConnect httpService={httpService} />
         {Config.ConnectionProviders.map(provider => (
           <_IdentityManageConnectButton
             key={provider.id}
-            href={provider.href}
+            href={provider.connectUrl}
             icon={provider.icon}
             colorCode={provider.colorCode}
             connected={hasConnectedProvider(user, provider.id)}

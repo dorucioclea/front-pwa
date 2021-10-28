@@ -5,7 +5,7 @@ import { StickyModal, IHttpService, handleAppResponse } from '@superciety/pwa-co
 import { Config } from '../../config'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faQrcode } from '@fortawesome/free-solid-svg-icons'
-import { getFreeiamConnectUriRequest, getUserRequest, storeFreeiamDisconnectRequest } from './api'
+import { getFreeiamConnectUriRequest, getMeRequest, storeFreeiamDisconnectRequest } from './api'
 import { setAuthenticatedUser } from './store/slice'
 import { useAppDispatch, useAppSelector } from '../store'
 import { selectUser } from './store/selectors'
@@ -66,7 +66,7 @@ const IdentityManageFreeiamConnect = ({ httpService }: Props) => {
     if (!isOpen) return
     if (countdown === CountdownStartFrom) return
     if (countdown !== 0 && countdown % 5 !== 0) return
-    handleAppResponse(getUserRequest(httpService), user => {
+    handleAppResponse(getMeRequest(httpService), user => {
       dispatch(setAuthenticatedUser(user))
       if (hasConnectedProvider(user, 'freeiam')) reset()
     })
@@ -79,8 +79,8 @@ const IdentityManageFreeiamConnect = ({ httpService }: Props) => {
         colorCode={Config.App.Colors.FreeiamPrimary}
         connected={hasConnectedAccount}
       >
+        <img src="/images/freeiam-logo.png" className="inline-block h-5 mr-3 -ml-1 -mt-1" />
         Freeiam
-        <img src="/images/freeiam-logo.png" className="inline-block h-5 mx-2 -mt-1" />
       </_IdentityManageConnectButton>
       <StickyModal open={isOpen} onClose={reset}>
         <p className="text-gray-800 text-xl text-center mt-4 mb-12">
