@@ -20,6 +20,7 @@ const SocialPlatformBar = ({ items, className = '' }: Props) => (
       <li key={item.label}>
         <a
           href={item.href}
+          target="_blank"
           className="flex justify-center items-center w-12 h-12 rounded-full opacity-50 hover:opacity-100 transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110"
           style={{ backgroundColor: item.colorHex }}
         >
