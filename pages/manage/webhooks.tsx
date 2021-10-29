@@ -1,8 +1,8 @@
-import ManageLayout from '../../layouts/ManageLayout'
 import { NextPage } from 'next'
+import ManageLayout from '../../layouts/ManageLayout'
 
 const ManageWebhooksPage: NextPage = () => {
-  return <ManageLayout>webhooks</ManageLayout>
+  return <ManageLayout heading="Webhooks">webhooks</ManageLayout>
 }
 
 export default ManageWebhooksPage
