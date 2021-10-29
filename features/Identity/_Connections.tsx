@@ -1,4 +1,4 @@
-import { User } from './types'
+import { User } from '../User/types'
 
 type Props = {
   user: User

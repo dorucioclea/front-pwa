@@ -36,7 +36,10 @@ export const Config = {
       { text: 'explore', href: '/explore', icon: faSearch },
       { text: 'about', href: '/about', icon: faInfo },
     ] as NavigationItem[],
-    Authenticated: [{ text: 'manage', href: '/manage', icon: faUser }] as NavigationItem[],
+    Authenticated: [
+      { text: 'manage', href: '/manage', icon: faUser },
+      { text: 'me', href: '/identify/me', icon: faUser },
+    ] as NavigationItem[],
   },
 
   Footer: {

@@ -11,7 +11,7 @@ type Props = {
   connected: boolean
 }
 
-const _IdentityManageConnectButton = (props: Props) => {
+const _ConnectButton = (props: Props) => {
   const btnClassNames = `relative flex justify-between w-full max-w-lg mb-4 px-8 py-4 bg-gray-50 text-gray-700 text-xl rounded-xl active:shadow border-l-4 border-solid group ${
     props.connected ? 'opacity-50' : ''
   }`
@@ -48,4 +48,4 @@ const _IdentityManageConnectButton = (props: Props) => {
   )
 }
 
-export default _IdentityManageConnectButton
+export default _ConnectButton

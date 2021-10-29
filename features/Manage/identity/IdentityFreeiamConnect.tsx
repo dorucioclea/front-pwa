@@ -1,15 +1,15 @@
 import QrCode from 'qrcode'
-import _IdentityManageConnectButton from './_IdentityManageConnectButton'
+import _ConnectButton from './_ConnectButton'
 import { useEffect, useState } from 'react'
 import { StickyModal, IHttpService, handleAppResponse } from '@superciety/pwa-core-library'
-import { Config } from '../../config'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faQrcode } from '@fortawesome/free-solid-svg-icons'
-import { getFreeiamConnectUriRequest, getMeRequest, storeFreeiamDisconnectRequest } from './api'
-import { setAuthenticatedUser } from './store/slice'
-import { useAppDispatch, useAppSelector } from '../store'
-import { selectUser } from './store/selectors'
-import { hasConnectedProvider } from './helpers'
+import { useAppDispatch, useAppSelector } from '../../store'
+import { selectUser } from '../../User/store/selectors'
+import { hasConnectedProvider } from '../../User/helpers'
+import { getFreeiamConnectUriRequest, getMeRequest, storeFreeiamDisconnectRequest } from '../../User/api'
+import { setAuthenticatedUser } from '../../User/store/slice'
+import { Config } from '../../../config'
 
 const CountdownStartFrom = 60
 
@@ -17,7 +17,7 @@ type Props = {
   httpService: IHttpService
 }
 
-const IdentityManageFreeiamConnect = ({ httpService }: Props) => {
+const IdentityFreeiamConnect = ({ httpService }: Props) => {
   const dispatch = useAppDispatch()
   const user = useAppSelector(selectUser)
   const [isOpen, setIsOpen] = useState(false)
@@ -74,14 +74,10 @@ const IdentityManageFreeiamConnect = ({ httpService }: Props) => {
 
   return (
     <>
-      <_IdentityManageConnectButton
-        onClick={handleClick}
-        colorCode={Config.App.Colors.FreeiamPrimary}
-        connected={hasConnectedAccount}
-      >
+      <_ConnectButton onClick={handleClick} colorCode={Config.App.Colors.FreeiamPrimary} connected={hasConnectedAccount}>
         <img src="/images/freeiam-logo.png" className="inline-block h-5 mr-3 -ml-1 -mt-1" />
         Freeiam
-      </_IdentityManageConnectButton>
+      </_ConnectButton>
       <StickyModal open={isOpen} onClose={reset}>
         <p className="text-gray-800 text-xl text-center mt-4 mb-12">
           Open the Freeiam <img src="/images/freeiam-logo.png" className="inline-block h-5 mx-2 -mt-1" /> App, press{' '}
@@ -108,4 +104,4 @@ const IdentityManageFreeiamConnect = ({ httpService }: Props) => {
   )
 }
 
-export default IdentityManageFreeiamConnect
+export default IdentityFreeiamConnect

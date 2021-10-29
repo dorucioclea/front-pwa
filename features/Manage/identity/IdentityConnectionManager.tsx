@@ -1,16 +1,16 @@
-import IdentityManageFreeiamConnect from './IdentityManageFreeiamConnect'
-import _IdentityManageConnectButton from './_IdentityManageConnectButton'
+import IdentityManageFreeiamConnect from './IdentityFreeiamConnect'
+import _ConnectButton from './_ConnectButton'
 import { IHttpService } from '@superciety/pwa-core-library'
-import { useAppSelector } from '../store'
-import { selectUser } from './store/selectors'
-import { Config } from '../../config'
-import { hasConnectedProvider } from './helpers'
+import { useAppSelector } from '../../store'
+import { selectUser } from '../../User/store/selectors'
+import { Config } from '../../../config'
+import { hasConnectedProvider } from '../../User/helpers'
 
 type Props = {
   httpService: IHttpService
 }
 
-const IdentityManageConnections = ({ httpService }: Props) => {
+const IdentityConnectionManager = ({ httpService }: Props) => {
   const user = useAppSelector(selectUser)
 
   return user ? (
@@ -19,7 +19,7 @@ const IdentityManageConnections = ({ httpService }: Props) => {
       <div>
         <IdentityManageFreeiamConnect httpService={httpService} />
         {Config.ConnectionProviders.map(provider => (
-          <_IdentityManageConnectButton
+          <_ConnectButton
             key={provider.id}
             href={provider.connectUrl}
             icon={provider.icon}
@@ -27,11 +27,11 @@ const IdentityManageConnections = ({ httpService }: Props) => {
             connected={hasConnectedProvider(user, provider.id)}
           >
             {provider.label}
-          </_IdentityManageConnectButton>
+          </_ConnectButton>
         ))}
       </div>
     </section>
   ) : null
 }
 
-export default IdentityManageConnections
+export default IdentityConnectionManager

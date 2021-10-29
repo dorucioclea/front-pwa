@@ -1,5 +1,5 @@
 import ManageLayout from '../../layouts/ManageLayout'
-import IdentityManageConnections from '../../features/User/IdentityManageConnections'
+import IdentityConnectionManager from '../../features/Manage/identity/IdentityConnectionManager'
 import { NextPage } from 'next'
 import { getHttpService } from '../../features/http'
 import { useAppGuard } from '../../features/hooks'
@@ -12,7 +12,7 @@ const ManageIdentityPage: NextPage = () => {
   return (
     <ManageLayout heading="Identity">
       <p className="text-xl mb-8">Manage your public image within Superciety</p>
-      <IdentityManageConnections httpService={httpService} />
+      <IdentityConnectionManager httpService={httpService} />
     </ManageLayout>
   )
 }
