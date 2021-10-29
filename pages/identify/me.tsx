@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import WideLayout from '../../layouts/WideLayout'
+import BaseLayout from '../../layouts/BaseLayout'
 import IdentityPresentor from '../../features/Identity/IdentityPresentor'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/User/store/selectors'
@@ -23,9 +23,9 @@ const IdentityPage: NextPage = () => {
   }, [user])
 
   return (
-    <WideLayout>
+    <BaseLayout>
       {identity && <IdentityPresentor identity={identity} />}
-    </WideLayout>
+    </BaseLayout>
   )
 }
 
