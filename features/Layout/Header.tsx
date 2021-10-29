@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ManageHeaderButton from '../Manage/ManageHeaderButton'
 import { Config } from '../../config'
 import { getHttpService } from '../http'
 import { getAuthProofableTokenRequest, storeAuthVerifyRequest } from '../User/api'
@@ -36,9 +37,12 @@ const Header = () => {
         </a>
       </Link>
       <Navigation items={navItems} className="hidden md:block" />
-      <div>
+      <div className="flex justify-end sm:w-20 md:w-32 lg:w-56 xl:w-64">
         {isLoggedIn ? (
-          <DisconnectButton onClick={handleLogoutRequest} />
+          <div className="flex items-center space-x-6">
+            <ManageHeaderButton />
+            <DisconnectButton onClick={handleLogoutRequest} />
+          </div>
         ) : (
           <ConnectButton onTokenRequest={handleProofableTokenRequest} onLocalLogin={handleProofableLogin} />
         )}
