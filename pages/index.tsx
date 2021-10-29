@@ -9,6 +9,7 @@ const Home: NextPage = () => (
     <FrontHero
       title="Building Utopia on Earth"
       description="It's 2021, and we still live in a society full of obligations & exploitations."
+      titleGradientClassName={['from-blue-500', 'to-green-300']}
       image="/images/logo.png"
       ctaText="Explore"
       ctaLink={Config.Urls.Developers}
