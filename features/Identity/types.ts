@@ -6,4 +6,5 @@ export type Identity = {
   bio: string | null
   profileImageUrl: string | null
   timezone: string | null
+  rank: string
 }

@@ -6,13 +6,10 @@ type Props = {
 }
 
 const _Header = ({ identity }: Props) => (
-  <div>
-    <span className="block text-lg text-gray-700 mb-2">{identity.address}</span>
-    <header className="flex p-8 rounded-xl bg-gray-50">
-      <_ProfileImage identity={identity} className="px-4" />
-      <div className="flex-grow">dfadsa</div>
-    </header>
-  </div>
+  <header className="flex p-8 border-gray-200 border-solid rounded-3xl" style={{ borderTopWidth: '4px' }}>
+    <_ProfileImage identity={identity} className="px-4" />
+    <div className="flex-grow">dfadsa</div>
+  </header>
 )
 
 export default _Header
