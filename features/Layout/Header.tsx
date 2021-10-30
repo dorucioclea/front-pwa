@@ -2,10 +2,11 @@ import Link from 'next/link'
 import ManageHeaderButton from '../Manage/ManageHeaderButton'
 import { Config } from '../../config'
 import { getHttpService } from '../http'
-import { getAuthProofableTokenRequest, storeAuthVerifyRequest } from '../User/api'
+import { getAuthProofableTokenRequest, storeAuthLogoutRequest, storeAuthVerifyRequest } from '../User/api'
 import { useAppDispatch, useAppSelector } from '../store'
 import { login, logout } from '../User/store/slice'
 import { selectUserLoggedIn } from '../User/store/selectors'
+import { getWalletService } from '../wallet'
 import {
   ConnectButton,
   DisconnectButton,
@@ -23,10 +24,16 @@ const Header = () => {
 
   const handleProofableTokenRequest = async () => (await getAuthProofableTokenRequest(httpService)).data.token
 
-  const handleProofableLogin = (proofableLogin: ProofableLogin) =>
+  const handleProofableLogin = (proofableLogin: ProofableLogin | null) => {
+    if (!proofableLogin) return
     handleAppResponse(storeAuthVerifyRequest(httpService, proofableLogin), user => dispatch(login(user)))
+  }
 
-  const handleLogoutRequest = () => dispatch(logout())
+  const handleLogoutRequest = () =>
+    handleAppResponse(storeAuthLogoutRequest(httpService), async () => {
+      dispatch(logout())
+      await getWalletService().logout()
+    })
 
   return (
     <header className="bg-black py-3 px-2 md:px-8 w-full flex justify-between items-center">
@@ -44,7 +51,11 @@ const Header = () => {
             <DisconnectButton onClick={handleLogoutRequest} />
           </div>
         ) : (
-          <ConnectButton onTokenRequest={handleProofableTokenRequest} onLocalLogin={handleProofableLogin} />
+          <ConnectButton
+            walletConfig={Config.Blockchain.WalletConfig}
+            onTokenRequest={handleProofableTokenRequest}
+            onLocalLogin={handleProofableLogin}
+          />
         )}
       </div>
       <NavigationMobile items={navItems} />

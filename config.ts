@@ -1,10 +1,29 @@
+import type { WalletServiceConfig } from '@superciety/pwa-core-library'
 import { faHome, faInfo, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { NavigationItem } from '@superciety/pwa-core-library'
 import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
 import { UserConnectionProvider } from './features/User/types'
 
+export type SmartContractConfig = {
+  Address: string
+  GasLimit: number
+}
+
 export const Config = {
+  Blockchain: {
+    SmartContracts: {
+      IdentitySC: {
+        Address: 'erd1qqqqqqqqqqqqqpgq4vee4fss8kea7dld360q8yq0d9wru9vsyt2sz7gl2t',
+        GasLimit: 50000,
+      } as SmartContractConfig,
+    },
+    WalletConfig: {
+      GatewayAddress: 'https://devnet-gateway.elrond.com',
+      WebWalletUrl: 'https://devnet-wallet.elrond.com/dapp/init',
+    } as WalletServiceConfig,
+  },
+
   App: {
     Name: 'Superciety',
     Description: 'Buildinig the society of tomorrow on the Elrond blockchain.',
@@ -37,7 +56,7 @@ export const Config = {
       { text: 'about', href: '/about', icon: faInfo },
     ] as NavigationItem[],
     Authenticated: [
-      { text: 'manage', href: '/manage', icon: faUser },
+      { text: 'quests', href: '/explore/quests', icon: faUser },
       { text: 'me', href: '/identify/me', icon: faUser },
     ] as NavigationItem[],
   },

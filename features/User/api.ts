@@ -6,6 +6,8 @@ export const getAuthProofableTokenRequest = async (http: IHttpService) => await 
 export const storeAuthVerifyRequest = async (http: IHttpService, proofableLogin: ProofableLogin) =>
   await http.post<UserPrivate>('auth/verify', { signature: proofableLogin.signature, address: proofableLogin.address })
 
+export const storeAuthLogoutRequest = async (http: IHttpService) => await http.post('auth/logout')
+
 export const getMeRequest = async (http: IHttpService) => await http.get<UserPrivate>(`me`)
 
 export const getFreeiamConnectUriRequest = async (http: IHttpService) =>
