@@ -1,21 +1,23 @@
 import { IconDefinition } from '@fortawesome/fontawesome-common-types'
 
+export type UserConnectionPlatform = 'freeiam' | 'github' | 'twitter'
+
 export type UserPrivate = {
   address: string
   username: string | null
   name: string | null
   email: string
-  connections: UserConnection[]
+  connections: Record<UserConnectionPlatform, UserConnectionData>
 }
 
 export type User = {
   address: string
   username: string | null
   name: string | null
-  connections: UserConnection[]
+  connections: UserConnectionData[]
 }
 
-export type UserConnection = {
+export type UserConnectionData = {
   platform: string
   username: string
   link: string

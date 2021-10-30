@@ -10,14 +10,16 @@ import { hasConnectedProvider } from '../../User/helpers'
 import { getFreeiamConnectUriRequest, getMeRequest, storeFreeiamDisconnectRequest } from '../../User/api'
 import { setAuthenticatedUser } from '../../User/store/slice'
 import { Config } from '../../../config'
+import { callIdentifyFreeiamSC } from '../../Identity/blockchain'
 
 const CountdownStartFrom = 60
 
 type Props = {
   httpService: IHttpService
+  onConnected: () => void
 }
 
-const IdentityFreeiamConnect = ({ httpService }: Props) => {
+const IdentityFreeiamConnect = (props: Props) => {
   const dispatch = useAppDispatch()
   const user = useAppSelector(selectUser)
   const [isOpen, setIsOpen] = useState(false)
@@ -31,11 +33,13 @@ const IdentityFreeiamConnect = ({ httpService }: Props) => {
       return
     }
 
-    handleAppResponse(storeFreeiamDisconnectRequest(httpService), updatedUser => dispatch(setAuthenticatedUser(updatedUser)))
+    handleAppResponse(storeFreeiamDisconnectRequest(props.httpService), updatedUser =>
+      dispatch(setAuthenticatedUser(updatedUser))
+    )
   }
 
   const handleShowCodeRequest = () =>
-    handleAppResponse(getFreeiamConnectUriRequest(httpService), ({ uri }) => {
+    handleAppResponse(getFreeiamConnectUriRequest(props.httpService), ({ uri }) => {
       setCountdown(CountdownStartFrom)
       buildQrCode(uri)
     })
@@ -66,9 +70,12 @@ const IdentityFreeiamConnect = ({ httpService }: Props) => {
     if (!isOpen) return
     if (countdown === CountdownStartFrom) return
     if (countdown !== 0 && countdown % 5 !== 0) return
-    handleAppResponse(getMeRequest(httpService), user => {
+    handleAppResponse(getMeRequest(props.httpService), user => {
       dispatch(setAuthenticatedUser(user))
-      if (hasConnectedProvider(user, 'freeiam')) reset()
+      if (hasConnectedProvider(user, 'freeiam')) {
+        reset()
+        props.onConnected()
+      }
     })
   }, [isOpen, countdown])
 

@@ -5,22 +5,14 @@ import { NavigationItem } from '@superciety/pwa-core-library'
 import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
 import { UserConnectionProvider } from './features/User/types'
 
-export type SmartContractConfig = {
-  Address: string
-  GasLimit: number
-}
-
 export const Config = {
   Blockchain: {
     SmartContracts: {
-      IdentitySC: {
-        Address: 'erd1qqqqqqqqqqqqqpgq4vee4fss8kea7dld360q8yq0d9wru9vsyt2sz7gl2t',
-        GasLimit: 50000,
-      } as SmartContractConfig,
+      Identity: 'erd1qqqqqqqqqqqqqpgqqfyc3d6xrc2e7p86lnrqk033gt52253hyt2ss9fdhk',
     },
     WalletConfig: {
-      GatewayAddress: 'https://devnet-gateway.elrond.com',
-      WebWalletUrl: 'https://devnet-wallet.elrond.com/dapp/init',
+      GatewayAddress: 'https://testnet-gateway.elrond.com',
+      WebWalletUrl: 'https://testnet-wallet.elrond.com/dapp/init',
     } as WalletServiceConfig,
   },
 
