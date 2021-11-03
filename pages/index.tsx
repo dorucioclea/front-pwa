@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         description="are communities working towards a common goal"
         className="mb-64"
       >
-        <span className="font-bold text-4xl text-gray-400">🔜 Coming in 2022</span>
+        <span className="font-bold text-4xl text-gray-400">Coming in 2022</span>
       </FrontSection>
       <p className="text-2xl md:text-3xl text-gray-400 mb-8">One that builds tools that are owned by everyone:</p>
       <FrontSection
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         description="help us free our time and make lives easier"
         className="mb-64"
       >
-      <span className="font-bold text-4xl text-gray-400">🔜 Coming this year</span>
+      <span className="font-bold text-4xl text-gray-400">Coming in 2022</span>
       </FrontSection>
       <p className="text-2xl md:text-3xl text-gray-400 mb-8">One with people full of meaning and strength:</p>
       <FreeiamFrontSection />
