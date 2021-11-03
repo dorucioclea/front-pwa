@@ -10,13 +10,11 @@ import { hasConnectedProvider } from '../../User/helpers'
 import { getFreeiamConnectUriRequest, getMeRequest, storeFreeiamDisconnectRequest } from '../../User/api'
 import { setAuthenticatedUser } from '../../User/store/slice'
 import { Config } from '../../../config'
-import { callIdentifyFreeiamSC } from '../../Identity/blockchain'
 
 const CountdownStartFrom = 60
 
 type Props = {
   httpService: IHttpService
-  onConnected: () => void
 }
 
 const IdentityFreeiamConnect = (props: Props) => {
@@ -74,7 +72,6 @@ const IdentityFreeiamConnect = (props: Props) => {
       dispatch(setAuthenticatedUser(user))
       if (hasConnectedProvider(user, 'freeiam')) {
         reset()
-        props.onConnected()
       }
     })
   }, [isOpen, countdown])

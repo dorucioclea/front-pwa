@@ -24,9 +24,8 @@ export type UserConnectionData = {
 }
 
 export type UserConnectionProvider = {
-  id: string
+  id: UserConnectionPlatform
   label: string
   icon: IconDefinition
   colorCode: string
-  connectUrl: string
 }
