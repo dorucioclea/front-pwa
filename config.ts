@@ -13,6 +13,7 @@ export const Config = {
     WalletConfig: {
       GatewayAddress: 'https://testnet-gateway.elrond.com',
       WebWalletUrl: 'https://testnet-wallet.elrond.com/dapp/init',
+      WalletConnectBridge: 'https://bridge.walletconnect.org'
     } as WalletServiceConfig,
   },
 
