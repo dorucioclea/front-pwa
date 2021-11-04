@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../store'
 import { login, logout } from '../User/store/slice'
 import { selectUserLoggedIn } from '../User/store/selectors'
 import { getWalletService } from '../wallet'
+import { logoutUser } from '../User/helpers'
 import {
   ConnectButton,
   DisconnectButton,
@@ -29,11 +30,7 @@ const Header = () => {
     handleAppResponse(storeAuthVerifyRequest(httpService, proofableLogin), user => dispatch(login(user)))
   }
 
-  const handleLogoutRequest = () =>
-    handleAppResponse(storeAuthLogoutRequest(httpService), async () => {
-      dispatch(logout())
-      await getWalletService().logout()
-    })
+  const handleLogoutRequest = () => logoutUser(async () => await getWalletService().logout())
 
   return (
     <header className="bg-black py-3 px-2 md:px-8 w-full flex justify-between items-center">
