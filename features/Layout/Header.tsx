@@ -52,6 +52,7 @@ const Header = () => {
           </div>
         ) : (
           <ConnectButton
+            key={router.query.action?.toString()}
             forceOpen={isRequestedExternalInitialConnect}
             walletConfig={Config.Blockchain.WalletConfig}
             onTokenRequest={handleProofableTokenRequest}
