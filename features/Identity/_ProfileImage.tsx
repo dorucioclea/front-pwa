@@ -1,6 +1,6 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Identity } from './types'
+import { Identity } from '@superciety/pwa-core-library'
 
 type Props = {
   identity: Identity

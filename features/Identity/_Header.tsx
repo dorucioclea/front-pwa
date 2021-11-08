@@ -1,5 +1,5 @@
 import _ProfileImage from './_ProfileImage'
-import { Identity } from './types'
+import { Identity } from '@superciety/pwa-core-library'
 
 type Props = {
   identity: Identity

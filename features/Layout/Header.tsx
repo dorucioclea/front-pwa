@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ManageHeaderButton from '../Manage/ManageHeaderButton'
 import { Config } from '../../config'
 import { getHttpService } from '../http'
+import { useRouter } from 'next/router'
 import { getAuthProofableTokenRequest, storeAuthVerifyRequest } from '../User/api'
 import { useAppDispatch, useAppSelector } from '../store'
 import { login } from '../User/store/slice'
@@ -18,8 +19,10 @@ import {
 } from '@superciety/pwa-core-library'
 
 const Header = () => {
+  const router = useRouter()
   const httpService = getHttpService()
   const dispatch = useAppDispatch()
+  const isRequestedExternalInitialConnect = router.query.action === 'initial-connect'
   const isLoggedIn = useAppSelector(selectUserLoggedIn)
   const navItems = isLoggedIn ? Config.Navigation.Authenticated : Config.Navigation.Guest
 
@@ -49,6 +52,7 @@ const Header = () => {
           </div>
         ) : (
           <ConnectButton
+            forceOpen={isRequestedExternalInitialConnect}
             walletConfig={Config.Blockchain.WalletConfig}
             onTokenRequest={handleProofableTokenRequest}
             onLocalLogin={handleProofableLogin}

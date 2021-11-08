@@ -1,6 +1,6 @@
 import _Header from './_Header'
 import _FreeiamRankOverview from './_FreeiamRankOverview'
-import { Identity } from './types'
+import { Identity } from '@superciety/pwa-core-library'
 
 type Props = {
   identity: Identity

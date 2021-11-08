@@ -6,9 +6,7 @@ import { selectUser } from '../../features/User/store/selectors'
 import { useAppGuard } from '../../features/hooks'
 import { getHttpService } from '../../features/http'
 import { useEffect, useState } from 'react'
-import { Identity } from '../../features/Identity/types'
-import { handleAppResponse } from '@superciety/pwa-core-library'
-import { getIdentityRequest } from '../../features/Identity/api'
+import { getIdentityRequest, handleAppResponse, Identity } from '@superciety/pwa-core-library'
 
 const IdentityPage: NextPage = () => {
   const httpService = getHttpService()

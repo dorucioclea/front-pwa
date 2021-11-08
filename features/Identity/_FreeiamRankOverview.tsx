@@ -1,5 +1,5 @@
 import React from 'react'
-import { Identity } from './types'
+import { Identity } from '@superciety/pwa-core-library'
 
 interface IProps {
   identity: Identity
