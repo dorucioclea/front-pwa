@@ -17,18 +17,20 @@ export function useAppGuard(httpService: IHttpService, config?: AppGuardConfig) 
   const dispatch = useAppDispatch()
   const isLoggedInState = useAppSelector(selectUserLoggedIn)
   const user = useAppSelector(selectUser)
+  const wallet = getWalletService()
 
   const { redirectIfUnauthenticated = true } = config || {}
 
   const redirectToAuthPage = () => Router.replace(Config.App.Pages.Auth)
 
-  httpService.onUnauthorized = () => {
+  httpService.onUnauthorized = async () => {
     dispatch(logout())
+    await wallet.logout()
     redirectToAuthPage()
   }
 
   useEffect(() => {
-    const isLoggedInWallet = getWalletService().isLoggedIn()
+    const isLoggedInWallet = wallet.isLoggedIn()
 
     // on web wallet login, the wallet redirects back to the origin page
     // with address & signature that can be used to verify authenticity
