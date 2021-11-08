@@ -9,6 +9,8 @@ export const getWalletService = (provider?: WalletProviderId) => {
     staticWallet = new WalletService(provider || null, Config.Blockchain.WalletConfig)
 
     staticWallet.onLogout = logoutUser
+
+    staticWallet.init()
   }
 
   return staticWallet

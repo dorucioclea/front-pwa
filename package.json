@@ -11,7 +11,7 @@
     "secure-proxy": "local-ssl-proxy --source 3001 --target 3000"
   },
   "dependencies": {
-    "@elrondnetwork/erdjs": "^8.0.1-alpha.8",
+    "@elrondnetwork/erdjs": "^8.0.1-alpha.10",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",

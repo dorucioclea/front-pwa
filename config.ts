@@ -6,6 +6,14 @@ import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
 import { UserConnectionProvider } from './features/User/types'
 
 export const Config = {
+  Urls: {
+    ApiBase: 'https://api.superciety.com',
+    Developers: 'https://developers.superciety.com',
+    Attributions: 'https://law.superciety.com/general/attributions.html',
+    Freeiam: 'https://freeiam.com',
+    Elrond: 'https://elrond.com',
+  },
+
   Blockchain: {
     SmartContracts: {
       Identity: 'erd1qqqqqqqqqqqqqpgqqfyc3d6xrc2e7p86lnrqk033gt52253hyt2ss9fdhk',
@@ -13,7 +21,8 @@ export const Config = {
     WalletConfig: {
       GatewayAddress: 'https://testnet-gateway.elrond.com',
       WebWalletUrl: 'https://testnet-wallet.elrond.com/dapp/init',
-      WalletConnectBridge: 'https://bridge.walletconnect.org'
+      WalletConnectBridge: 'https://bridge.walletconnect.org',
+      WalletConnectDeepLink: 'https://maiar.page.link/?apn=com.elrond.maiar.wallet&isi=1519405832&ibi=com.elrond.maiar.wallet&link=https://maiar.com/',
     } as WalletServiceConfig,
   },
 
@@ -31,14 +40,6 @@ export const Config = {
       ManageFellowship: '/manage/fellowship',
       ManageWebhooks: '/manage/webhooks',
     },
-  },
-
-  Urls: {
-    ApiBase: process.env.NEXT_PUBLIC_API_BASEURL || 'https://api.superciety.com',
-    Developers: 'https://developers.superciety.com',
-    Attributions: 'https://law.superciety.com/general/attributions.html',
-    Freeiam: 'https://freeiam.com',
-    Elrond: 'https://elrond.com',
   },
 
   Navigation: {
