@@ -29,6 +29,16 @@ export function useAppGuard(httpService: IHttpService, config?: AppGuardConfig) 
   }
 
   useEffect(() => {
+    if (!getWalletService().isLoggedIn()) return
+
+    const walletHeartbeatInterval = setInterval(() => {
+      getWalletService().heartbeat()
+    }, 15000)
+
+    return () => clearInterval(walletHeartbeatInterval)
+  }, [isLoggedInState])
+
+  useEffect(() => {
     const isLoggedInWallet = getWalletService().isLoggedIn()
 
     // on web wallet login, the wallet redirects back to the origin page
@@ -56,6 +66,7 @@ export function useAppGuard(httpService: IHttpService, config?: AppGuardConfig) 
 
     if (redirectIfUnauthenticated) {
       redirectToAuthPage()
+      return
     }
   }, [isLoggedInState, user])
 }
