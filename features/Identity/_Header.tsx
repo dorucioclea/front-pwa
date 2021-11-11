@@ -1,8 +1,8 @@
 import _ProfileImage from './_ProfileImage'
-import { Identity } from '@superciety/pwa-core-library'
+import { SCY_Identity } from '@superciety/pwa-core-library'
 
 type Props = {
-  identity: Identity
+  identity: SCY_Identity
 }
 
 const _Header = ({ identity }: Props) => (
