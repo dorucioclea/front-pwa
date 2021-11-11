@@ -1,9 +1,9 @@
 import _Header from './_Header'
 import _FreeiamRankOverview from './_FreeiamRankOverview'
-import { Identity } from '@superciety/pwa-core-library'
+import { SCY_Identity } from '@superciety/pwa-core-library'
 
 type Props = {
-  identity: Identity
+  identity: SCY_Identity
 }
 
 const IdentityPresentor = ({ identity }: Props) => (

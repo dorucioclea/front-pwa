@@ -6,18 +6,17 @@ import { selectUser } from '../../features/User/store/selectors'
 import { useAppGuard } from '../../features/hooks'
 import { getHttpService } from '../../features/http'
 import { useEffect, useState } from 'react'
-import { getIdentityRequest, handleAppResponse, Identity } from '@superciety/pwa-core-library'
+import { getScyIdentityRequest, handleAppResponse, SCY_Identity } from '@superciety/pwa-core-library'
 
 const IdentityPage: NextPage = () => {
-  const httpService = getHttpService()
   const user = useSelector(selectUser)
-  const [identity, setIdentity] = useState<Identity | null>(null)
+  const [identity, setIdentity] = useState<SCY_Identity | null>(null)
 
-  useAppGuard(httpService)
+  useAppGuard(getHttpService())
 
   useEffect(() => {
     if (!user) return
-    handleAppResponse(getIdentityRequest(httpService, user.address), data => setIdentity(data))
+    handleAppResponse(getScyIdentityRequest(getHttpService(), user.address), data => setIdentity(data))
   }, [user])
 
   return (
