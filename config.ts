@@ -57,7 +57,7 @@ export const Config = {
 
   Footer: {
     Socials: [
-      { label: 'Discord', icon: faDiscord, colorHex: '#7289da', href: 'http://freeiam.chat' },
+      { label: 'Discord', icon: faDiscord, colorHex: '#7289da', href: 'http://superciety.chat' },
       { label: 'Twitter', icon: faTwitter, colorHex: '#00acee', href: 'https://twitter.com/SupercietyHQ' },
     ] as SocialPlatformBarItem[],
   },
