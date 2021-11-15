@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <link rel="manifest" href="manifest.json" />
         <link rel="icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="icon-192x192.png" />
 
         <title>{title}</title>
       </Head>
