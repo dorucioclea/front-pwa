@@ -20,10 +20,10 @@ const FreeiamFrontSection = () => (
     <img src="/images/freeiam-rush-out.svg" className="block md:hidden -ml-20 h-64 float-2" />
     <p className="max-w-3xl text-2xl text-gray-500 mb-4">
       <a href={Config.Urls.Freeiam} target="_blank" className="font-bold text-gray-600 border-none">
-        Freeiam
+        Our service Freeiam
         <img src="/images/freeiam-logo.png" className="inline-block h-5 mx-2 -mt-1" />
       </a>{' '}
-      is a service provided by Superciety to help you turn your life around and
+      is designed to help you
     </p>
     <LinkButton href={Config.Urls.Freeiam} color="blue">
       become Superhuman
