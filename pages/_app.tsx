@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content={Config.App.Colors.Teal} />
         <meta name="description" content={Config.App.Description} />
 
-        <link rel="manifest" href="manifest.json" />
-        <link rel="icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="icon-192x192.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icon-192x192.png" />
 
         <title>{title}</title>
       </Head>
