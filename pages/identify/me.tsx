@@ -1,16 +1,16 @@
 import type { NextPage } from 'next'
-import BaseLayout from '../../layouts/BaseLayout'
+import SuperIdLayout from '../../layouts/SuperIdLayout'
 import IdentityPresentor from '../../features/Identity/IdentityPresentor'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/User/store/selectors'
 import { useAppGuard } from '../../features/hooks'
 import { getHttpService } from '../../features/http'
 import { useEffect, useState } from 'react'
-import { getScyIdentityRequest, handleAppResponse, SCY_Identity } from '@superciety/pwa-core-library'
+import { getScyIdentityRequest, handleAppResponse, ScyIdentity } from '@superciety/pwa-core-library'
 
 const IdentityPage: NextPage = () => {
   const user = useSelector(selectUser)
-  const [identity, setIdentity] = useState<SCY_Identity | null>(null)
+  const [identity, setIdentity] = useState<ScyIdentity | null>(null)
 
   useAppGuard(getHttpService())
 
@@ -20,9 +20,9 @@ const IdentityPage: NextPage = () => {
   }, [user])
 
   return (
-    <BaseLayout>
+    <SuperIdLayout>
       {identity && <IdentityPresentor identity={identity} />}
-    </BaseLayout>
+    </SuperIdLayout>
   )
 }
 

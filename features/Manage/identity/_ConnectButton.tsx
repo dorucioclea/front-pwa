@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type Props = {
   children: any
+  href: string
   onClick?: () => void
   colorCode: string
   icon?: IconDefinition
@@ -12,23 +13,24 @@ type Props = {
 
 const _ConnectButton = (props: Props) => {
   const overlayClassNames =
-    'opacity-0 group-hover:opacity-100 absolute inset-0 flex justify-center items-center bg-gray-100 rounded-xl transition duration-300'
+    'opacity-0 group-hover:opacity-100 absolute inset-0 flex justify-center items-center bg-gray-200 rounded-xl transition duration-300 text-gray-600'
 
   const Overlay = () => <span className={overlayClassNames}>{props.connected ? 'Disconnect' : 'Connect'}</span>
 
   const Icon = ({ icon }: { icon: IconDefinition }) => (
-    <FontAwesomeIcon icon={icon} color={props.colorCode} size="lg" className="opacity-75 inline-block mr-3" />
+    <FontAwesomeIcon icon={icon} size="lg" className="text-white opacity-75 inline-block mr-3" />
   )
 
   const ConnectedIcon = () => <FontAwesomeIcon icon={faCheck} size="lg" className="text-green-500" />
 
   return (
-    <button
+    <a
+      href={props.href}
       onClick={props.onClick}
-      className={`relative flex justify-between w-full max-w-lg mb-4 px-8 py-4 bg-gray-50 text-gray-700 text-xl rounded-xl active:shadow border-l-4 border-solid group ${
+      className={`relative flex justify-between w-full max-w-lg mb-4 px-8 py-4 bg-gray-50 text-white text-xl rounded-3xl active:shadow group ${
         props.connected ? 'opacity-50' : ''
       }`}
-      style={{ borderColor: props.colorCode }}
+      style={{ backgroundColor: props.colorCode }}
     >
       <span>
         {props.icon && !props.connected && <Icon icon={props.icon} />}
@@ -36,7 +38,7 @@ const _ConnectButton = (props: Props) => {
       </span>
       <Overlay />
       {props.connected && <ConnectedIcon />}
-    </button>
+    </a>
   )
 }
 

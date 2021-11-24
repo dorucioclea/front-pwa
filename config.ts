@@ -15,9 +15,6 @@ export const Config = {
   },
 
   Blockchain: {
-    SmartContracts: {
-      Identity: 'erd1qqqqqqqqqqqqqpgqqfyc3d6xrc2e7p86lnrqk033gt52253hyt2ss9fdhk',
-    },
     WalletConfig: {
       GatewayAddress: 'https://testnet-gateway.elrond.com',
       WebWalletUrl: 'https://testnet-wallet.elrond.com/dapp/init',
@@ -68,12 +65,14 @@ export const Config = {
       label: 'Github',
       icon: faGithub,
       colorCode: '#000',
+      connectUrl: process.env.NEXT_PUBLIC_API_BASEURL + '/connect/github',
     },
     {
       id: 'twitter',
       label: 'Twitter',
       icon: faTwitter,
       colorCode: '#00acee',
+      connectUrl: process.env.NEXT_PUBLIC_API_BASEURL + '/connect/twitter',
     },
   ] as UserConnectionProvider[],
 }

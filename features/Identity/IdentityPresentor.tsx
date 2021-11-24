@@ -1,15 +1,20 @@
 import _Header from './_Header'
 import _FreeiamRankOverview from './_FreeiamRankOverview'
-import { SCY_Identity } from '@superciety/pwa-core-library'
+import { ScyIdentity } from '@superciety/pwa-core-library'
 
 type Props = {
-  identity: SCY_Identity
+  identity: ScyIdentity
 }
 
 const IdentityPresentor = ({ identity }: Props) => (
-  <div>
-    <_FreeiamRankOverview identity={identity} />
-    <_Header identity={identity} />
+  <div className="flex w-full">
+    <div className="w-2/3 p-4">
+      <_FreeiamRankOverview identity={identity} />
+      <_Header identity={identity} />
+    </div>
+    <div className="w-1/3 p-4">
+      <div className="bg-gray-800 rounded-3xl p-4"></div>
+    </div>
   </div>
 )
 

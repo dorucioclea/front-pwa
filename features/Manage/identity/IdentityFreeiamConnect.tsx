@@ -78,8 +78,13 @@ const IdentityFreeiamConnect = (props: Props) => {
 
   return (
     <>
-      <_ConnectButton onClick={handleClick} colorCode={Config.App.Colors.FreeiamPrimary} connected={hasConnectedAccount}>
-        <img src="/images/freeiam-logo.png" className="inline-block h-5 mr-3 -ml-1 -mt-1" />
+      <_ConnectButton
+        href="#"
+        onClick={handleClick}
+        colorCode={Config.App.Colors.FreeiamPrimary}
+        connected={hasConnectedAccount}
+      >
+        <img src="/images/freeiam-logo-white.png" className="inline-block h-5 mr-3 -ml-1 -mt-1" />
         Freeiam
       </_ConnectButton>
       <StickyModal open={isOpen} onClose={reset}>
