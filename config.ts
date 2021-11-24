@@ -7,7 +7,7 @@ import { UserConnectionProvider } from './features/User/types'
 
 export const Config = {
   Urls: {
-    ApiBase: 'https://api.superciety.com',
+    ApiBase: process.env.NEXT_PUBLIC_API_BASEURL || 'https://api.superciety.com',
     Developers: 'https://developers.superciety.com',
     Attributions: 'https://law.superciety.com/general/attributions.html',
     Freeiam: 'https://freeiam.com',
