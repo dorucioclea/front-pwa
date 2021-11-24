@@ -1,9 +1,9 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { SCY_Identity } from '@superciety/pwa-core-library'
+import { ScyIdentity } from '@superciety/pwa-core-library'
 
 type Props = {
-  identity: SCY_Identity
+  identity: ScyIdentity
   className?: string
 }
 
