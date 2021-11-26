@@ -15,7 +15,7 @@ const _Connections = ({ identity }: Props) => (
       {Object.entries(identity.connections).map(([platform, socialAccount]) => (
         <li key={platform} className="text-gray-800 px-3 py-2 text-lg flex items-center">
           {getPlatformIcon(platform as SocialAccountPlatform)}
-          <a href="#" target="_blank" className="inline-block ml-2">
+          <a href={socialAccount.link} target="_blank" className="inline-block ml-2">
             {'@' + socialAccount.username}
           </a>
         </li>
