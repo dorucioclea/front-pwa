@@ -15,9 +15,6 @@ const IdentityPresentor = ({ identity }: Props) => (
     </div>
     <div className="w-1/3 p-4">
       <section className="bg-gray-50 rounded-3xl p-8 mb-8">
-        <h2 className="text-2xl mb-2 text-transparent bg-clip-text bg-gradient-to-br from-gray-800 to-blue-800">
-          Verified Connections
-        </h2>
         <_Connections identity={identity} />
       </section>
     </div>
