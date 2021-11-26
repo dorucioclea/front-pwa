@@ -7,17 +7,19 @@ import { useAppGuard } from '../../features/hooks'
 import { getHttpService } from '../../features/http'
 import { useEffect, useState } from 'react'
 import { getIdentityRequest, handleAppResponse, Identity } from '@superciety/pwa-core-library'
+import { useRouter } from 'next/router'
 
 const IdentityPage: NextPage = () => {
-  const user = useSelector(selectUser)
+  const router = useRouter()
+  const id = router.query.id as string
   const [identity, setIdentity] = useState<Identity | null>(null)
 
   useAppGuard(getHttpService())
 
   useEffect(() => {
-    if (!user) return
-    handleAppResponse(getIdentityRequest(getHttpService(), user.address), data => setIdentity(data))
-  }, [user])
+    if (!id) return
+    handleAppResponse(getIdentityRequest(getHttpService(), id), data => setIdentity(data))
+  }, [id])
 
   return (
     <IdentityLayout>

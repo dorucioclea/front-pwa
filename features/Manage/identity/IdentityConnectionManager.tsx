@@ -6,7 +6,7 @@ import { useAppSelector } from '../../store'
 import { selectUser } from '../../User/store/selectors'
 import { Config } from '../../../config'
 import { hasConnectedProvider } from '../../User/helpers'
-import { UserConnectionPlatform } from '../../User/types'
+import { SocialAccountPlatform } from '../../User/types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp, faAt } from '@fortawesome/free-solid-svg-icons'
 

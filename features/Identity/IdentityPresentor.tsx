@@ -1,9 +1,10 @@
 import _Header from './_Header'
 import _FreeiamRankOverview from './_FreeiamRankOverview'
-import { ScyIdentity } from '@superciety/pwa-core-library'
+import _Connections from './_Connections'
+import { Identity } from '@superciety/pwa-core-library'
 
 type Props = {
-  identity: ScyIdentity
+  identity: Identity
 }
 
 const IdentityPresentor = ({ identity }: Props) => (
@@ -13,7 +14,12 @@ const IdentityPresentor = ({ identity }: Props) => (
       <_Header identity={identity} />
     </div>
     <div className="w-1/3 p-4">
-      <div className="bg-gray-800 rounded-3xl p-4"></div>
+      <section className="bg-gray-50 rounded-3xl p-8 mb-8">
+        <h2 className="text-2xl mb-2 text-transparent bg-clip-text bg-gradient-to-br from-gray-800 to-blue-800">
+          Verified Connections
+        </h2>
+        <_Connections identity={identity} />
+      </section>
     </div>
   </div>
 )

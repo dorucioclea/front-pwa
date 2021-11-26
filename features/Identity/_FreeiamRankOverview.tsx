@@ -1,8 +1,8 @@
 import React from 'react'
-import { ScyIdentity } from '@superciety/pwa-core-library'
+import { Identity } from '@superciety/pwa-core-library'
 
 interface IProps {
-  identity: ScyIdentity
+  identity: Identity
 }
 
 const _FreeiamRankOverview = ({ identity }: IProps) => {

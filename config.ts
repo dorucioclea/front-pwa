@@ -1,9 +1,8 @@
-import type { WalletServiceConfig } from '@superciety/pwa-core-library'
+import type { SocialAccountProvider, WalletServiceConfig } from '@superciety/pwa-core-library'
 import { faHome, faInfo, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { NavigationItem } from '@superciety/pwa-core-library'
 import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
-import { UserConnectionProvider } from './features/User/types'
 
 export const Config = {
   Urls: {
@@ -12,6 +11,8 @@ export const Config = {
     Attributions: 'https://law.superciety.com/general/attributions.html',
     Freeiam: 'https://freeiam.com',
     Elrond: 'https://elrond.com',
+    ElrondExplorer: process.env.NEXT_PUBLIC_ELROND_EXPLORER || 'https://explorer.elrond.com',
+    ElrondWallet: process.env.NEXT_PUBLIC_ELROND_WALLET || 'https://wallet.elrond.com',
   },
 
   Blockchain: {
@@ -74,5 +75,5 @@ export const Config = {
       colorCode: '#00acee',
       connectUrl: 'https://api.superciety.com/connect/twitter',
     },
-  ] as UserConnectionProvider[],
+  ] as SocialAccountProvider[],
 }

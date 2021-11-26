@@ -1,26 +1,36 @@
-import { User } from '../User/types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Identity, SocialAccountPlatform } from '@superciety/pwa-core-library'
+import { Config } from '../../config'
 
 type Props = {
-  user: User
+  identity: Identity
 }
 
-const _IdentityConnections = ({ user }: Props) => {
-  const getPlatformIcon = (platform: string) => {
-    return null
+const _Connections = ({ identity }: Props) => (
+  <ul aria-label="Connections">
+    {Object.entries(identity.connections).map(([platform, socialAccount]) => (
+      <li key={platform} className="text-gray-800 px-3 py-2 text-lg flex items-center">
+        {getPlatformIcon(platform as SocialAccountPlatform)}
+        <a href="#" target="_blank" className="inline-block ml-2">
+          {'@' + socialAccount.username}
+        </a>
+      </li>
+    ))}
+  </ul>
+)
+
+const getPlatformIcon = (platform: SocialAccountPlatform) => {
+  if (platform === 'freeiam') {
+    return <img src="/images/freeiam-logo.png" className="inline-block h-4" style={{ marginLeft: '-2px' }} />
   }
-  return (
-    <ul className="space-y-1" aria-label="Connections">
-      {user.connections.map(connection => (
-        <li
-          key={connection.platform}
-          className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-3 py-2 text-sm font-medium rounded-md"
-        >
-          {getPlatformIcon(connection.platform)}
-          <span>{'@' + connection.username}</span>
-        </li>
-      ))}
-    </ul>
-  )
+
+  const connectionProvider = Config.ConnectionProviders.find(p => p.id === platform)
+
+  if (connectionProvider) {
+    return <FontAwesomeIcon icon={connectionProvider.icon} color={connectionProvider.colorCode} size="lg" />
+  }
+
+  return null
 }
 
-export default _IdentityConnections
+export default _Connections

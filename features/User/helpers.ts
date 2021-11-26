@@ -5,6 +5,8 @@ import { storeAuthLogoutRequest } from './api'
 import { getHttpService } from '../http'
 import { logout } from './store/slice'
 
+export const getRawUsername = (username: string) => username.split('.')[0]
+
 export const logoutUser = (onDone?: () => any) =>
   handleAppResponse(storeAuthLogoutRequest(getHttpService()), async () => {
     store.dispatch(logout())

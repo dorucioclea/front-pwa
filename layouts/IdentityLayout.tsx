@@ -6,14 +6,14 @@ type Props = {
   children: any
 }
 
-const SuperIdLayout = ({ children }: Props) => (
+const IdentityLayout = ({ children }: Props) => (
   <div className="relative overflow-hidden pb-24 mb:pb-0">
     <header className="py-3 px-2 md:px-8 w-full flex items-center">
       <Link href="/">
         <a className="flex items-center">
           <img src="/images/logo.png" className="block mr-1 md:mr-2 w-12 h-12" />
           <span className="font-head text-black text-3xl uppercase tracking-widest">
-            Super<span className="highlight">ID</span>
+            Super<span className="text-primary-500">ID</span>
           </span>
         </a>
       </Link>
@@ -25,4 +25,4 @@ const SuperIdLayout = ({ children }: Props) => (
   </div>
 )
 
-export default SuperIdLayout
+export default IdentityLayout
