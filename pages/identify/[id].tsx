@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 import IdentityLayout from '../../layouts/IdentityLayout'
 import IdentityPresentor from '../../features/Identity/IdentityPresentor'
-import { useSelector } from 'react-redux'
-import { selectUser } from '../../features/User/store/selectors'
 import { useAppGuard } from '../../features/hooks'
 import { getHttpService } from '../../features/http'
 import { useEffect, useState } from 'react'
