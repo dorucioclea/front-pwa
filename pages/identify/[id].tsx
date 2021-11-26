@@ -12,7 +12,7 @@ const IdentityPage: NextPage = () => {
   const id = router.query.id as string
   const [identity, setIdentity] = useState<Identity | null>(null)
 
-  useAppGuard(getHttpService())
+  useAppGuard(getHttpService(), { redirectIfUnauthenticated: false })
 
   useEffect(() => {
     if (!id) return
