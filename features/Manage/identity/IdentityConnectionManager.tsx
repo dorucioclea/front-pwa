@@ -1,14 +1,10 @@
 import IdentityManageFreeiamConnect from './IdentityFreeiamConnect'
 import _ConnectButton from './_ConnectButton'
-import { useState } from 'react'
-import { Button, IHttpService, StickyModal, Input } from '@superciety/pwa-core-library'
+import { IHttpService } from '@superciety/pwa-core-library'
 import { useAppSelector } from '../../store'
 import { selectUser } from '../../User/store/selectors'
 import { Config } from '../../../config'
 import { hasConnectedProvider } from '../../User/helpers'
-import { SocialAccountPlatform } from '../../User/types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faArrowUp, faAt } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
   httpService: IHttpService

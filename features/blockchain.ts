@@ -8,14 +8,12 @@ export const callSmartContract = async (
   gasLimit: number,
   onDone?: () => void
 ) => {
-  const sc = new SmartContract({ address: new Address(contractAddress) })
-  const tx = sc.call({
-    func: new ContractFunction(func),
-    gasLimit: new GasLimit(gasLimit),
-    args: args,
-  })
-
-  await getWalletService().sendTransaction(tx)
-
-  if (onDone) onDone()
+  // const sc = new SmartContract({ address: new Address(contractAddress) })
+  // const tx = sc.call({
+  //   func: new ContractFunction(func),
+  //   gasLimit: new GasLimit(gasLimit),
+  //   args: args,
+  // })
+  // await getWalletService().sendTransaction(tx)
+  // if (onDone) onDone()
 }

@@ -1,4 +1,4 @@
-import { IconDefinition } from '@fortawesome/fontawesome-common-types'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { classNames } from '@superciety/pwa-core-library'
@@ -8,7 +8,7 @@ type Props = {
   href: string
   onClick?: () => void
   colorCode: string
-  icon?: IconDefinition
+  icon?: IconProp
   connected: boolean
 }
 
@@ -22,7 +22,7 @@ const _ConnectButton = (props: Props) => {
     </span>
   )
 
-  const Icon = ({ icon }: { icon: IconDefinition }) => (
+  const Icon = ({ icon }: { icon: IconProp }) => (
     <FontAwesomeIcon icon={icon} size="lg" className="text-white opacity-75 inline-block mr-3" />
   )
 
