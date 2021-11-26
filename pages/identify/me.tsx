@@ -11,16 +11,21 @@ import { getIdentityRequest, handleAppResponse, Identity } from '@superciety/pwa
 const IdentityPage: NextPage = () => {
   const user = useSelector(selectUser)
   const [identity, setIdentity] = useState<Identity | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   useAppGuard(getHttpService())
 
   useEffect(() => {
     if (!user) return
-    handleAppResponse(getIdentityRequest(getHttpService(), user.address), data => setIdentity(data))
+    setIsLoading(true)
+    handleAppResponse(getIdentityRequest(getHttpService(), user.address), data => {
+      setIdentity(data)
+      setIsLoading(false)
+    }, () => setIsLoading(false), 250)
   }, [user])
 
   return (
-    <IdentityLayout>
+    <IdentityLayout loading={isLoading}>
       {identity && <IdentityPresentor identity={identity} />}
     </IdentityLayout>
   )

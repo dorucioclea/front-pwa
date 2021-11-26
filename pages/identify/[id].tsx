@@ -11,16 +11,21 @@ const IdentityPage: NextPage = () => {
   const router = useRouter()
   const id = router.query.id as string
   const [identity, setIdentity] = useState<Identity | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   useAppGuard(getHttpService(), { redirectIfUnauthenticated: false })
 
   useEffect(() => {
     if (!id) return
-    handleAppResponse(getIdentityRequest(getHttpService(), id), data => setIdentity(data))
+    setIsLoading(true)
+    handleAppResponse(getIdentityRequest(getHttpService(), id), data => {
+      setIdentity(data)
+      setIsLoading(false)
+    }, () => setIsLoading(false), 250)
   }, [id])
 
   return (
-    <IdentityLayout>
+    <IdentityLayout loading={isLoading}>
       {identity && <IdentityPresentor identity={identity} />}
     </IdentityLayout>
   )
