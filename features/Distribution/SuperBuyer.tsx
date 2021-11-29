@@ -1,10 +1,13 @@
+import AuthButton from '../Auth/AuthButton'
 import { Config } from '../../config'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IHttpService, Input } from '@superciety/pwa-core-library'
+import { Button, IHttpService, Input } from '@superciety/pwa-core-library'
 import { callSmartContract } from '../blockchain'
 import { Balance } from '@elrondnetwork/erdjs'
 import { useState } from 'react'
+import { useAppSelector } from '../store'
+import { selectUserLoggedIn } from '../User/store/selectors'
 
 const PricePerTokenScConfig = 0.00002 // EGLD
 
@@ -13,8 +16,10 @@ type Props = {
 }
 
 const SuperBuyer = (props: Props) => {
+  const isLoggedIn = useAppSelector(selectUserLoggedIn)
   const [amount, setAmount] = useState('1')
   const claimableAmount = +amount > 0 ? Math.round(+amount / PricePerTokenScConfig) : 0
+  const submitButtonText = `Claim your ${claimableAmount > 0 ? claimableAmount : ''} $SUPER`
 
   const handleBuyRequest = () => {
     const distScConfig = Config.Blockchain.SmartContracts.Distribution
@@ -49,13 +54,17 @@ const SuperBuyer = (props: Props) => {
         onChange={val => setAmount(val)}
         className="mb-8"
       />
-      <button
-        onClick={handleBuyRequest}
-        className="bg-indigo-500 hover:bg-indigo-600 text-white text-2xl rounded-3xl shadow-lg hover:shadow-2xl px-8 py-4"
-      >
-        Claim your {claimableAmount > 0 ? claimableAmount : ''} $SUPER
-        <FontAwesomeIcon icon={faAngleRight} size="lg" className="text-white opacity-75 inline-block ml-2" />
-      </button>
+      {isLoggedIn ? (
+        <Button color="indigo" onClick={handleBuyRequest} large>
+          {submitButtonText}
+          <FontAwesomeIcon icon={faAngleRight} size="lg" className="text-white opacity-75 inline-block ml-2" />
+        </Button>
+      ) : (
+        <AuthButton color="indigo" large>
+          {submitButtonText}
+          <FontAwesomeIcon icon={faAngleRight} size="lg" className="text-white opacity-75 inline-block ml-2" />
+        </AuthButton>
+      )}
     </div>
   )
 }
