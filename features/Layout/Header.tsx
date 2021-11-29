@@ -1,23 +1,12 @@
 import Link from 'next/link'
+import AuthButton from '../Auth/AuthButton'
 import ManageHeaderButton from '../Manage/ManageHeaderButton'
 import { Config } from '../../config'
-import { getHttpService } from '../http'
-import { useRouter } from 'next/router'
-import { getAuthProofableTokenRequest, storeAuthVerifyRequest } from '../User/api'
-import { useAppDispatch, useAppSelector } from '../store'
-import { login } from '../User/store/slice'
+import { useAppSelector } from '../store'
 import { selectUserLoggedIn } from '../User/store/selectors'
 import { getWalletService } from '../wallet'
 import { logoutUser } from '../User/helpers'
-import {
-  classNames,
-  ConnectButton,
-  DisconnectButton,
-  handleAppResponse,
-  Navigation,
-  NavigationMobile,
-  ProofableLogin,
-} from '@superciety/pwa-core-library'
+import { classNames, DisconnectButton, Navigation, NavigationMobile } from '@superciety/pwa-core-library'
 
 type Props = {
   black?: boolean
@@ -25,19 +14,8 @@ type Props = {
 }
 
 const Header = (props: Props) => {
-  const router = useRouter()
-  const httpService = getHttpService()
-  const dispatch = useAppDispatch()
-  const isRequestedExternalInitialConnect = router.query.action === 'initial-connect'
   const isLoggedIn = useAppSelector(selectUserLoggedIn)
   const navItems = isLoggedIn ? Config.Navigation.Authenticated : Config.Navigation.Guest
-
-  const handleProofableTokenRequest = async () => (await getAuthProofableTokenRequest(httpService)).data.token
-
-  const handleProofableLogin = (proofableLogin: ProofableLogin | null) => {
-    if (!proofableLogin) return
-    handleAppResponse(storeAuthVerifyRequest(httpService, proofableLogin), user => dispatch(login(user)))
-  }
 
   const handleLogoutRequest = () => logoutUser(async () => await getWalletService().logout())
 
@@ -63,13 +41,7 @@ const Header = (props: Props) => {
             <DisconnectButton onClick={handleLogoutRequest} />
           </div>
         ) : (
-          <ConnectButton
-            key={router.query.action?.toString()}
-            forceOpen={isRequestedExternalInitialConnect}
-            walletConfig={Config.Blockchain.WalletConfig}
-            onTokenRequest={handleProofableTokenRequest}
-            onLocalLogin={handleProofableLogin}
-          />
+          <AuthButton />
         )}
       </div>
       {!props.disableNavigation && <NavigationMobile items={navItems} />}
