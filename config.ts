@@ -1,8 +1,7 @@
-import type { SocialAccountProvider, WalletServiceConfig } from '@superciety/pwa-core-library'
 import { faHome, faInfo, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { NavigationItem } from '@superciety/pwa-core-library'
 import { SocialPlatformBarItem } from './features/Layout/SocialPlatformBar'
+import type { SocialAccountProvider, WalletServiceConfig, SmartContractConfig, NavigationItem } from '@superciety/pwa-core-library'
 
 export const Config = {
   Urls: {
@@ -22,6 +21,17 @@ export const Config = {
       WalletConnectBridge: 'https://bridge.walletconnect.org',
       WalletConnectDeepLink: 'https://maiar.page.link/?apn=com.elrond.maiar.wallet&isi=1519405832&ibi=com.elrond.maiar.wallet&link=https://maiar.com/',
     } as WalletServiceConfig,
+    SmartContracts: {
+      Distribution: {
+        Address: '',
+        Functions: {
+          Buy: {
+            FunctionName: 'buy',
+            GasLimit: 0,
+          }
+        },
+      } as SmartContractConfig,
+    }
   },
 
   App: {

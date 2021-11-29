@@ -43,7 +43,7 @@ const ManageLayout = (props: Props) => {
 
   return (
     <div className="overflow-hidden pb-24 mb:pb-0">
-      <Header />
+      <Header black />
       <div className="flex flex-wrap max-w-8xl mx-auto md:pt-12 mb-20 md:mb-40">
         <div className="w-full md:w-1/3 lg:w-1/4 p-4">
           <SideNavigation items={sideNavigation} className="mb-4" />

@@ -10,6 +10,7 @@ import { selectUserLoggedIn } from '../User/store/selectors'
 import { getWalletService } from '../wallet'
 import { logoutUser } from '../User/helpers'
 import {
+  classNames,
   ConnectButton,
   DisconnectButton,
   handleAppResponse,
@@ -18,7 +19,12 @@ import {
   ProofableLogin,
 } from '@superciety/pwa-core-library'
 
-const Header = () => {
+type Props = {
+  black?: boolean
+  disableNavigation?: boolean
+}
+
+const Header = (props: Props) => {
   const router = useRouter()
   const httpService = getHttpService()
   const dispatch = useAppDispatch()
@@ -36,18 +42,24 @@ const Header = () => {
   const handleLogoutRequest = () => logoutUser(async () => await getWalletService().logout())
 
   return (
-    <header className="bg-black py-3 px-2 md:px-8 w-full flex justify-between items-center">
+    <header
+      className={classNames('py-3 px-2 md:px-8 w-full flex justify-between items-center', props.black ? 'bg-black' : '')}
+    >
       <Link href="/">
         <a className="flex items-center">
-          <img src="/images/logo-white.png" className="block mr-1 md:mr-2 w-12 h-12" />
-          <span className="font-head text-white text-2xl uppercase tracking-widest">{Config.App.Name}</span>
+          <img src={props.black ? '/images/logo-white.png' : '/images/logo.png'} className="block mr-1 md:mr-2 w-12 h-12" />
+          <span
+            className={classNames('font-head text-2xl uppercase tracking-widest', props.black ? 'text-white' : 'text-black')}
+          >
+            {Config.App.Name}
+          </span>
         </a>
       </Link>
-      <Navigation items={navItems} className="hidden md:block" />
+      {!props.disableNavigation && <Navigation items={navItems} className="hidden md:block" />}
       <div className="flex justify-end sm:w-20 md:w-32 lg:w-56 xl:w-64">
         {isLoggedIn ? (
           <div className="flex items-center space-x-6">
-            <ManageHeaderButton />
+            <ManageHeaderButton dark={props.black} />
             <DisconnectButton onClick={handleLogoutRequest} />
           </div>
         ) : (
@@ -60,7 +72,7 @@ const Header = () => {
           />
         )}
       </div>
-      <NavigationMobile items={navItems} />
+      {!props.disableNavigation && <NavigationMobile items={navItems} />}
     </header>
   )
 }

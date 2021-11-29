@@ -22,7 +22,7 @@ const IdentityLayout = (props: Props) =>
           </a>
         </Link>
       </header>
-      <main className="p-4 md:p-8 lg:px-16 xl:px-32" style={{ height: 'calc(100vh - 80px)' }}>
+      <main className="p-4 md:p-8 lg:px-16 xl:px-32" style={{ minHeight: 'calc(100vh - 80px)' }}>
         {props.children}
       </main>
       <Footer />

@@ -7,7 +7,7 @@ type Props = {
 
 const BaseLayout = (props: Props) => (
   <div className="overflow-hidden pb-24 mb:pb-0">
-    <Header />
+    <Header black />
     <main className="max-w-6xl mx-auto p-12 mb-20 md:mb-40">{props.children}</main>
     <Footer />
   </div>

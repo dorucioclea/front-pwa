@@ -7,7 +7,7 @@ type Props = {
 
 const FrontLayout = ({ children }: Props) => (
   <div className="relative overflow-hidden pb-24 mb:pb-0">
-    <Header />
+    <Header black />
     <main className="max-w-8xl mx-auto p-4">{children}</main>
     <Footer />
   </div>
